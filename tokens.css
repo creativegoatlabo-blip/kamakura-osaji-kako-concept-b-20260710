@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "Noto Sans Japanese";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url("https://osaji.net/cdn/fonts/noto_sans_japanese/notosansjapanese_n4.74a6927b879b930fdec4ab8bb6917103ae8bbca9.woff2") format("woff2"),
+    url("https://osaji.net/cdn/fonts/noto_sans_japanese/notosansjapanese_n4.15630f5c60bcf9ed7de2df9484ab75ddd007c8e2.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans Japanese";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("https://osaji.net/cdn/fonts/noto_sans_japanese/notosansjapanese_n7.1abda075dc6bf08053b865d23e5712ef6cfa899b.woff2") format("woff2"),
+    url("https://osaji.net/cdn/fonts/noto_sans_japanese/notosansjapanese_n7.aa2be2df2112f4742b97ac4fa9dca5bb760e3ab4.woff") format("woff");
+}
+
+:root {
+  --color-paper: oklch(94% 0.005 60);
+  --color-paper-2: oklch(91% 0.006 60);
+  --color-paper-3: oklch(87% 0.008 55);
+  --color-rule: oklch(78% 0.006 55);
+  --color-rule-2: oklch(56% 0.008 50);
+  --color-muted: oklch(46% 0.01 50);
+  --color-neutral: oklch(28% 0.014 45);
+  --color-ink-2: oklch(18% 0.02 40);
+  --color-ink: oklch(12% 0.024 40);
+  --color-accent: oklch(22% 0.06 40);
+  --color-accent-ink: oklch(45% 0.13 60);
+  --color-moss: oklch(34% 0.055 142);
+  --color-focus: oklch(45% 0.13 60);
+  --color-light-ink: oklch(94% 0.009 78);
+  --color-light-muted: oklch(79% 0.012 78);
+  --color-dark-surface: oklch(14% 0.018 52);
+  --color-photo-scrim: oklch(10% 0.02 48 / 0.68);
+  --color-photo-scrim-clear: oklch(10% 0.02 48 / 0.06);
+  --color-sticky-surface: oklch(94% 0.005 60 / 0.97);
+
+  --font-display: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, serif;
+  --font-body: "Noto Sans Japanese", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  --font-outlier: "Cormorant Garamond", "Noto Serif JP", serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5625rem;
+  --text-xl: 1.9531rem;
+  --text-2xl: 2.4414rem;
+  --text-display-s: clamp(1.75rem, 4vw + 0.75rem, 3.5rem);
+  --text-display: clamp(2.25rem, 5vw + 0.75rem, 4.25rem);
+
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+  --space-5xl: 12rem;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+
+  --rule-hair: 1px;
+  --rule-medium: 2px;
+  --radius-none: 0;
+  --page-gutter: clamp(1.125rem, 5vw, 4rem);
+  --page-max: 76rem;
+  --measure: 56ch;
+  --tap-target: 3rem;
+  --z-base: 1;
+  --z-sticky: 200;
+}
