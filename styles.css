@@ -1,8 +1,8 @@
 /* Hallmark · genre: editorial · macrostructure: Narrative Workflow · theme: Atelier · enrichment: E8 real photography · nav: N6 · footer: Ft1 · audience: couples beginning a new life · use: feel the meaning and check availability · tone: quiet luxury
  * contrast: pass (46–50) · slop: pass (51–55) · honest: pass (56) · chrome: pass (57) · tokens: pass (58) · responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69)
  */
-/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
-@import url("./tokens.css?v=20260710-concept-b");
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V4 */
+@import url("./tokens.css?v=20260711-concept-b2");
 
 *,
 *::before,
@@ -34,6 +34,7 @@ body {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 figure,
@@ -252,6 +253,10 @@ a[aria-disabled="true"] {
   color: var(--color-light-muted);
 }
 
+.mobile-break {
+  display: none;
+}
+
 .brands {
   display: grid;
   gap: var(--space-4xl);
@@ -355,6 +360,7 @@ a[aria-disabled="true"] {
 .memory__diptych {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2xs);
 }
 
 .memory__diptych figure {
@@ -363,7 +369,8 @@ a[aria-disabled="true"] {
 
 .memory__diptych img {
   width: 100%;
-  height: clamp(18rem, 52svh, 34rem);
+  height: auto;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
 }
 
@@ -417,8 +424,19 @@ a[aria-disabled="true"] {
 
 .day-step img {
   width: 100%;
+  height: auto;
   aspect-ratio: 3 / 2;
   object-fit: cover;
+}
+
+.day-step--text {
+  padding-block-start: var(--space-xl);
+  border-block-start: var(--rule-hair) solid var(--color-rule);
+}
+
+.day-step--closing {
+  padding-block-end: var(--space-xl);
+  border-block-end: var(--rule-hair) solid var(--color-rule);
 }
 
 .booking {
@@ -449,6 +467,8 @@ a[aria-disabled="true"] {
 }
 
 .booking__benefit {
+  display: grid;
+  gap: var(--space-2xs);
   color: var(--color-moss);
   font-family: var(--font-display);
   font-size: var(--text-md);
@@ -578,6 +598,47 @@ a[aria-disabled="true"] {
   font-size: var(--text-sm);
 }
 
+@media (max-width: 59.999rem) {
+  .hero {
+    display: grid;
+    min-height: 0;
+    padding: 0;
+    background: var(--color-dark-surface);
+  }
+
+  .hero__image {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  .hero__shade {
+    inset: 0 0 auto;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    background: linear-gradient(180deg, var(--color-photo-scrim-clear), var(--color-photo-scrim));
+  }
+
+  .hero__copy {
+    position: relative;
+    inset: auto;
+    padding: var(--space-xl) var(--page-gutter) var(--space-3xl);
+  }
+
+  .hero__caption {
+    inset-block-start: calc(66.666vw - var(--space-xl));
+    inset-block-end: auto;
+  }
+}
+
+@media (max-width: 39.999rem) {
+  .mobile-break {
+    display: block;
+  }
+}
+
 @media (min-width: 40rem) {
   .brand-story,
   .day-step {
@@ -593,6 +654,22 @@ a[aria-disabled="true"] {
   .brand-story--kamakura .brand-story__copy,
   .day-step--reverse .day-step__copy {
     order: 1;
+  }
+
+  .day-step:not(.day-step--reverse):not(.day-step--text) figure {
+    order: 1;
+  }
+
+  .day-step:not(.day-step--reverse):not(.day-step--text) .day-step__copy {
+    order: 2;
+  }
+
+  .day-step--text {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .day-step--closing .day-step__copy {
+    justify-self: end;
   }
 
   .memory__diptych {
