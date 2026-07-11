@@ -1,8 +1,8 @@
-/* Hallmark · genre: editorial · macrostructure: Narrative Workflow · theme: Atelier · anchor hue: brown-moss · enrichment: E8 multi-frame photography (hero=4 controlled autoplay · brands=3 manual + thumbnails) · nav: N6 · footer: Ft1 · audience: couples beginning a new life · use: feel the meaning and check availability · tone: quiet luxury
+/* Hallmark · genre: editorial · macrostructure: Narrative Workflow · theme: Atelier · anchor hue: brown-moss · enrichment: E8 multi-frame photography (hero=opening diptych + 3 controlled slides · brands=3 manual + thumbnails · outcomes=static 3:2) · native FAQ · nav: N6 · footer: Ft1 · audience: couples beginning a new life · use: understand the day and check availability · tone: quiet luxury
  * contrast: pass (46–50) · slop: pass (51–55) · honest: pass (56) · chrome: pass (57) · tokens: pass (58) · responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69)
  */
 /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
-@import url("./tokens.css?v=20260711-concept-b3");
+@import url("./tokens.css?v=20260711-concept-b4");
 
 *,
 *::before,
@@ -205,6 +205,23 @@ a[aria-disabled="true"] {
   inset: 0;
 }
 
+.hero__slide--diptych {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: var(--space-2xs);
+}
+
+.hero__slide--diptych .hero__image {
+  min-width: 0;
+}
+
+.hero__slide--diptych .hero__image:first-child {
+  object-position: 62% center;
+}
+
+.hero__slide--diptych .hero__image:last-child {
+  object-position: 52% center;
+}
+
 .hero__image {
   width: 100%;
   height: 100%;
@@ -223,7 +240,9 @@ a[aria-disabled="true"] {
 
 .hero__shade {
   z-index: var(--z-base);
-  background: linear-gradient(180deg, var(--color-photo-scrim-clear), var(--color-photo-scrim));
+  background:
+    linear-gradient(90deg, var(--color-photo-scrim), var(--color-photo-scrim-clear) 72%),
+    linear-gradient(180deg, var(--color-photo-scrim-clear), var(--color-photo-scrim));
   pointer-events: none;
 }
 
@@ -238,16 +257,24 @@ a[aria-disabled="true"] {
   z-index: var(--z-sticky);
 }
 
-.hero__copy > p {
+.hero__eyebrow {
   color: var(--color-light-muted);
   font-size: var(--text-sm);
   letter-spacing: 0.06em;
+}
+
+.hero__context {
+  max-width: 44rem;
+  color: var(--color-light-ink);
+  font-size: var(--text-sm);
+  line-height: 2;
 }
 
 .hero h1,
 .brands h2,
 .memory h2,
 .day h2,
+.faq h2,
 .booking h2 {
   min-width: 0;
   font-family: var(--font-display);
@@ -309,6 +336,10 @@ a[aria-disabled="true"] {
 .js .carousel__slide.is-active {
   opacity: 1;
   pointer-events: auto;
+}
+
+.js .hero__slide--diptych {
+  display: grid;
 }
 
 .carousel__counter {
@@ -387,6 +418,10 @@ a[aria-disabled="true"] {
   display: none;
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
 .brands {
   display: grid;
   gap: var(--space-4xl);
@@ -394,7 +429,8 @@ a[aria-disabled="true"] {
 }
 
 .brands__intro,
-.day__intro {
+.day__intro,
+.faq__intro {
   display: grid;
   gap: var(--space-lg);
   max-width: var(--measure);
@@ -402,6 +438,7 @@ a[aria-disabled="true"] {
 
 .brands__intro h2,
 .day__intro h2,
+.faq__intro h2,
 .booking h2 {
   font-size: var(--text-display-s);
   line-height: 1.35;
@@ -409,9 +446,11 @@ a[aria-disabled="true"] {
 
 .brands__intro p,
 .day__intro p,
+.faq__intro p,
 .brand-story__copy p,
 .day-step__copy p,
-.memory__words p {
+.memory__words p,
+.memory__outcome p {
   color: var(--color-neutral);
   line-height: 2;
 }
@@ -549,7 +588,9 @@ a[aria-disabled="true"] {
 }
 
 .memory__diptych figure {
+  display: grid;
   min-width: 0;
+  align-content: start;
 }
 
 .memory__diptych img {
@@ -557,6 +598,24 @@ a[aria-disabled="true"] {
   height: auto;
   aspect-ratio: 3 / 2;
   object-fit: cover;
+}
+
+.memory__outcome figcaption {
+  display: grid;
+  gap: var(--space-md);
+  padding: var(--space-xl) var(--page-gutter) var(--space-2xl);
+}
+
+.memory__outcome h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.memory__outcome p {
+  max-width: 30rem;
+  color: var(--color-light-muted);
 }
 
 .day {
@@ -622,6 +681,63 @@ a[aria-disabled="true"] {
 .day-step--closing {
   padding-block-end: var(--space-xl);
   border-block-end: var(--rule-hair) solid var(--color-rule);
+}
+
+.faq {
+  display: grid;
+  gap: var(--space-2xl);
+  padding-block: var(--space-3xl);
+}
+
+.faq__list {
+  border-block-start: var(--rule-hair) solid var(--color-rule);
+}
+
+.faq details {
+  border-block-end: var(--rule-hair) solid var(--color-rule);
+}
+
+.faq summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-lg);
+  align-items: center;
+  min-height: 4.5rem;
+  padding-block: var(--space-md);
+  color: var(--color-ink-2);
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  line-height: 1.6;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "＋";
+  color: var(--color-accent-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: 400;
+}
+
+.faq details[open] summary::after {
+  content: "−";
+}
+
+.faq summary:focus-visible {
+  outline: var(--rule-medium) solid var(--color-focus);
+  outline-offset: var(--space-2xs);
+}
+
+.faq details p {
+  max-width: 44rem;
+  padding-block: 0 var(--space-xl);
+  color: var(--color-neutral);
+  line-height: 2;
 }
 
 .booking {
@@ -806,6 +922,11 @@ a[aria-disabled="true"] {
     height: 100%;
   }
 
+  .hero__slide--diptych .hero__image {
+    position: relative;
+    inset: auto;
+  }
+
   .hero__shade {
     inset: 0 0 auto;
     height: auto;
@@ -937,7 +1058,8 @@ a[aria-disabled="true"] {
   }
 
   .brands__intro,
-  .day__intro {
+  .day__intro,
+  .faq__intro {
     margin-inline-start: 8%;
   }
 
