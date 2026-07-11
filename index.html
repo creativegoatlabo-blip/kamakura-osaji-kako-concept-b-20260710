@@ -16,8 +16,8 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&amp;family=Noto+Serif+JP:wght@400;500&amp;display=swap"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260711-concept-b2" />
-    <script src="./script.js?v=20260711-concept-b2" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=20260711-concept-b3" />
+    <script src="./script.js?v=20260711-concept-b3" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">本文へ移動</a>
@@ -44,15 +44,68 @@
     </header>
 
     <main id="main">
-      <section id="top" class="hero" aria-labelledby="hero-title">
-        <img
-          class="hero__image"
-          src="./assets/kako-provided/web/kako-shelf.jpg"
-          alt="OSAJI kakoの暗い香料棚の前を人が歩く様子"
-          width="2000"
-          height="1332"
-          fetchpriority="high"
-        />
+      <section
+        id="top"
+        class="hero carousel"
+        aria-labelledby="hero-title"
+        aria-roledescription="カルーセル"
+        aria-label="香りと指輪の一日"
+        data-carousel
+        data-autoplay="true"
+      >
+        <div class="hero__gallery carousel__stage">
+          <figure class="hero__slide carousel__slide is-active" data-carousel-slide data-caption="OSAJI kako · 香りの棚">
+            <img
+              class="hero__image"
+              src="./assets/kako-provided/web/kako-shelf.jpg"
+              alt="OSAJI kakoの暗い香料棚の前を人が歩く様子"
+              width="2000"
+              height="1332"
+              fetchpriority="high"
+            />
+          </figure>
+          <figure class="hero__slide carousel__slide" data-carousel-slide data-caption="OSAJI kako · 一滴ずつ調香">
+            <img
+              class="hero__image"
+              src="./assets/wire/hero-fragrance.jpg"
+              alt="スポイトで香りを一滴ずつ調香する手元"
+              width="1100"
+              height="623"
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
+          <figure class="hero__slide carousel__slide" data-carousel-slide data-caption="鎌倉彫金工房 · ふたりで指輪づくり">
+            <img
+              class="hero__image"
+              src="./assets/wire/divider-couple-making.jpg"
+              alt="結婚指輪づくりに笑顔で取り組むふたり"
+              width="900"
+              height="600"
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
+          <figure class="hero__slide carousel__slide" data-carousel-slide data-caption="鎌倉彫金工房 · 完成した指輪">
+            <img
+              class="hero__image"
+              src="./assets/wire/final-ring.jpg"
+              alt="花を敷き詰めた木箱に収められた完成した指輪"
+              width="1000"
+              height="667"
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
+          <div class="hero__media-meta">
+            <p class="hero__caption"><span data-carousel-caption>OSAJI kako · 香りの棚</span><span class="carousel__counter"><span data-carousel-index>01</span> / 04</span></p>
+            <div class="carousel__controls" aria-label="FV写真の操作">
+              <button class="carousel__button carousel__button--pause" type="button" data-carousel-toggle aria-pressed="false">一時停止</button>
+              <button class="carousel__button" type="button" data-carousel-prev aria-label="前の写真">←</button>
+              <button class="carousel__button" type="button" data-carousel-next aria-label="次の写真">→</button>
+            </div>
+          </div>
+        </div>
         <div class="hero__shade" aria-hidden="true"></div>
         <div class="hero__copy">
           <p>香りを選ぶ。指輪をつくる。</p>
@@ -61,7 +114,6 @@
             <span>その日の手ざわりを、<br class="mobile-break" />これからの手へ。</span>
           </h1>
         </div>
-        <p class="hero__caption">OSAJI kako 蔵前店</p>
       </section>
 
       <section id="brands" class="brands section-shell" aria-labelledby="brands-title">
@@ -71,16 +123,31 @@
         </header>
 
         <article class="brand-story brand-story--kako">
-          <figure class="brand-story__figure">
-            <img
-              src="./assets/kako-provided/web/kako-scent-selection.jpg"
-              alt="試香紙で香りを選ぶOSAJI kakoの調香体験"
-              width="2000"
-              height="1333"
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>OSAJI kako · Kuramae</figcaption>
+          <figure class="brand-gallery carousel" aria-roledescription="カルーセル" aria-label="OSAJI kakoの写真" data-carousel>
+            <div class="brand-gallery__stage carousel__stage">
+              <div class="brand-gallery__slide carousel__slide is-active" data-carousel-slide data-caption="香りを選ぶ">
+                <img src="./assets/kako-provided/web/kako-scent-selection.jpg" alt="試香紙で香りを選ぶOSAJI kakoの調香体験" width="2000" height="1333" loading="lazy" decoding="async" />
+              </div>
+              <div class="brand-gallery__slide carousel__slide" data-carousel-slide data-caption="一滴ずつ調える">
+                <img src="./assets/kako-provided/web/kako-blending.jpg" alt="ビーカーに香りを一滴ずつ調合する手元" width="2000" height="1333" loading="lazy" decoding="async" />
+              </div>
+              <div class="brand-gallery__slide carousel__slide" data-carousel-slide data-caption="蔵前の店を訪れる">
+                <img src="./assets/kako-provided/web/kako-kuramae-exterior.jpg" alt="OSAJI kako 蔵前店の外観" width="2000" height="1333" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <figcaption class="brand-gallery__meta">
+              <span>OSAJI kako · <span data-carousel-caption>香りを選ぶ</span></span>
+              <span class="carousel__counter"><span data-carousel-index>01</span> / 03</span>
+              <span class="carousel__controls">
+                <button class="carousel__button" type="button" data-carousel-prev aria-label="OSAJI kakoの前の写真">←</button>
+                <button class="carousel__button" type="button" data-carousel-next aria-label="OSAJI kakoの次の写真">→</button>
+              </span>
+            </figcaption>
+            <div class="brand-gallery__thumbs" aria-label="OSAJI kakoの写真を選ぶ">
+              <button class="brand-gallery__thumb is-active" type="button" data-carousel-goto="0" aria-label="香りを選ぶ写真" aria-current="true"><img src="./assets/kako-provided/web/kako-scent-selection.jpg" alt="" width="2000" height="1333" loading="lazy" /></button>
+              <button class="brand-gallery__thumb" type="button" data-carousel-goto="1" aria-label="香りを調える写真"><img src="./assets/kako-provided/web/kako-blending.jpg" alt="" width="2000" height="1333" loading="lazy" /></button>
+              <button class="brand-gallery__thumb" type="button" data-carousel-goto="2" aria-label="蔵前店外観の写真"><img src="./assets/kako-provided/web/kako-kuramae-exterior.jpg" alt="" width="2000" height="1333" loading="lazy" /></button>
+            </div>
           </figure>
           <div class="brand-story__copy">
             <img class="brand-story__logo brand-story__logo--kako" src="./assets/wire/kako-logo.svg" alt="OSAJI kako" width="140" height="61" loading="lazy" />
@@ -90,16 +157,31 @@
         </article>
 
         <article class="brand-story brand-story--kamakura">
-          <figure class="brand-story__figure">
-            <img
-              src="./assets/wire/brand-kamakura-kuramae.jpg"
-              alt="緑と木の色に包まれた鎌倉彫金工房 東京蔵前の店内"
-              width="1000"
-              height="667"
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>鎌倉彫金工房 · Tokyo Kuramae</figcaption>
+          <figure class="brand-gallery carousel" aria-roledescription="カルーセル" aria-label="鎌倉彫金工房の写真" data-carousel>
+            <div class="brand-gallery__stage carousel__stage">
+              <div class="brand-gallery__slide carousel__slide is-active" data-carousel-slide data-caption="木と緑の受付">
+                <img src="./assets/wire/brand-kamakura-kuramae.jpg" alt="緑と木の色に包まれた鎌倉彫金工房 東京蔵前の店内" width="1000" height="667" loading="lazy" decoding="async" />
+              </div>
+              <div class="brand-gallery__slide carousel__slide" data-carousel-slide data-caption="光が入る作業フロア">
+                <img src="./assets/wire/brand-kamakura.jpg" alt="自然光が入る鎌倉彫金工房 東京蔵前の作業フロア" width="1000" height="667" loading="lazy" decoding="async" />
+              </div>
+              <div class="brand-gallery__slide carousel__slide" data-carousel-slide data-caption="手を動かして指輪にする">
+                <img class="brand-gallery__portrait" src="./assets/wire/hero-kamakura-bg.jpg" alt="鎌倉彫金工房で指輪を制作する手元" width="900" height="1350" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <figcaption class="brand-gallery__meta">
+              <span>鎌倉彫金工房 · <span data-carousel-caption>木と緑の受付</span></span>
+              <span class="carousel__counter"><span data-carousel-index>01</span> / 03</span>
+              <span class="carousel__controls">
+                <button class="carousel__button" type="button" data-carousel-prev aria-label="鎌倉彫金工房の前の写真">←</button>
+                <button class="carousel__button" type="button" data-carousel-next aria-label="鎌倉彫金工房の次の写真">→</button>
+              </span>
+            </figcaption>
+            <div class="brand-gallery__thumbs" aria-label="鎌倉彫金工房の写真を選ぶ">
+              <button class="brand-gallery__thumb is-active" type="button" data-carousel-goto="0" aria-label="受付の写真" aria-current="true"><img src="./assets/wire/brand-kamakura-kuramae.jpg" alt="" width="1000" height="667" loading="lazy" /></button>
+              <button class="brand-gallery__thumb" type="button" data-carousel-goto="1" aria-label="作業フロアの写真"><img src="./assets/wire/brand-kamakura.jpg" alt="" width="1000" height="667" loading="lazy" /></button>
+              <button class="brand-gallery__thumb" type="button" data-carousel-goto="2" aria-label="指輪制作の写真"><img class="brand-gallery__portrait" src="./assets/wire/hero-kamakura-bg.jpg" alt="" width="900" height="1350" loading="lazy" /></button>
+            </div>
           </figure>
           <div class="brand-story__copy">
             <img class="brand-story__logo brand-story__logo--kamakura" src="./assets/wire/kamakura-logo.png" alt="鎌倉彫金工房" width="575" height="240" loading="lazy" />
@@ -120,10 +202,10 @@
         <div class="memory__diptych">
           <figure>
             <img
-              src="./assets/kako-provided/web/kako-blending.jpg"
-              alt="ビーカーに香りを一滴ずつ調合する手元"
-              width="2000"
-              height="1333"
+              src="./assets/wire/divider-kako-bottle.jpg"
+              alt="OSAJI kakoで作るホームフレグランスのボトル"
+              width="900"
+              height="600"
               loading="lazy"
               decoding="async"
             />

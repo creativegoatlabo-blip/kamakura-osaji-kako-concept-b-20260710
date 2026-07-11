@@ -1,8 +1,8 @@
-/* Hallmark · genre: editorial · macrostructure: Narrative Workflow · theme: Atelier · enrichment: E8 real photography · nav: N6 · footer: Ft1 · audience: couples beginning a new life · use: feel the meaning and check availability · tone: quiet luxury
+/* Hallmark · genre: editorial · macrostructure: Narrative Workflow · theme: Atelier · anchor hue: brown-moss · enrichment: E8 multi-frame photography (hero=4 controlled autoplay · brands=3 manual + thumbnails) · nav: N6 · footer: Ft1 · audience: couples beginning a new life · use: feel the meaning and check availability · tone: quiet luxury
  * contrast: pass (46–50) · slop: pass (51–55) · honest: pass (56) · chrome: pass (57) · tokens: pass (58) · responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69)
  */
-/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V4 */
-@import url("./tokens.css?v=20260711-concept-b2");
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
+@import url("./tokens.css?v=20260711-concept-b3");
 
 *,
 *::before,
@@ -97,7 +97,7 @@ a[aria-disabled="true"] {
 }
 
 .hero__caption,
-.brand-story figcaption,
+.brand-gallery__meta,
 .booking__date,
 .foot-mast small {
   color: var(--color-muted);
@@ -188,23 +188,43 @@ a[aria-disabled="true"] {
   color: var(--color-light-ink);
 }
 
-.hero__image,
+.hero .hero__gallery,
 .hero__shade {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
+}
+
+.hero .hero__gallery {
+  z-index: auto;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
 }
 
 .hero__image {
-  z-index: -2;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: 48% center;
 }
 
+.hero__slide:nth-child(2) .hero__image,
+.hero__slide:nth-child(4) .hero__image {
+  object-position: center;
+}
+
+.hero__slide:nth-child(3) .hero__image {
+  object-position: center 35%;
+}
+
 .hero__shade {
-  z-index: -1;
+  z-index: var(--z-base);
   background: linear-gradient(180deg, var(--color-photo-scrim-clear), var(--color-photo-scrim));
+  pointer-events: none;
 }
 
 .hero__copy {
@@ -215,6 +235,7 @@ a[aria-disabled="true"] {
   display: grid;
   gap: var(--space-lg);
   max-width: 55rem;
+  z-index: var(--z-sticky);
 }
 
 .hero__copy > p {
@@ -246,11 +267,120 @@ a[aria-disabled="true"] {
   display: block;
 }
 
-.hero__caption {
+.hero__media-meta {
   position: absolute;
   inset-inline-end: var(--page-gutter);
   inset-block-end: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-md);
+  z-index: var(--z-sticky);
+}
+
+.hero__caption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
   color: var(--color-light-muted);
+}
+
+.carousel__stage {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.carousel__slide {
+  margin: 0;
+}
+
+.carousel__slide:not(.is-active) {
+  display: none;
+}
+
+.js .carousel__slide {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-long) var(--ease-in-out);
+}
+
+.js .carousel__slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel__counter {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.carousel__controls {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  white-space: nowrap;
+}
+
+.carousel__button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: var(--space-xs) var(--space-sm);
+  border: var(--rule-hair) solid var(--color-rule-2);
+  background: transparent;
+  color: var(--color-neutral);
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    opacity var(--dur-micro) var(--ease-out),
+    transform var(--dur-micro) var(--ease-out);
+}
+
+.hero .carousel__button {
+  border-color: var(--color-light-muted);
+  color: var(--color-light-ink);
+}
+
+.carousel__button--pause {
+  min-width: 5.5rem;
+}
+
+.carousel__button:focus-visible,
+.brand-gallery__thumb:focus-visible {
+  outline: var(--rule-medium) solid var(--color-focus);
+  outline-offset: var(--space-2xs);
+}
+
+.carousel__button:active,
+.brand-gallery__thumb:active {
+  transform: translateY(var(--space-3xs));
+}
+
+.carousel__button:disabled,
+.carousel__button[aria-disabled="true"],
+.brand-gallery__thumb:disabled,
+.brand-gallery__thumb[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.carousel__button[data-state="loading"],
+.brand-gallery__thumb[data-state="loading"] {
+  cursor: wait;
+}
+
+.carousel__button[data-state="error"],
+.brand-gallery__thumb[data-state="error"] {
+  border-style: dashed;
+  color: var(--color-focus);
+}
+
+.carousel__button[data-state="success"],
+.brand-gallery__thumb[data-state="success"] {
+  color: var(--color-moss);
 }
 
 .mobile-break {
@@ -292,14 +422,69 @@ a[aria-disabled="true"] {
   align-items: center;
 }
 
-.brand-story__figure {
+.brand-gallery {
   display: grid;
   gap: var(--space-sm);
   min-width: 0;
 }
 
-.brand-story__figure img {
+.brand-gallery__stage {
+  aspect-ratio: 3 / 2;
+}
+
+.brand-gallery__slide {
+  position: absolute;
+  inset: 0;
+}
+
+.brand-gallery__slide img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-gallery__portrait {
+  object-position: center 62%;
+}
+
+.brand-gallery__meta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-xs) var(--space-sm);
+  align-items: center;
+}
+
+.brand-gallery__meta > .carousel__controls {
+  grid-column: 1 / -1;
+  justify-self: end;
+}
+
+.brand-gallery__thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-xs);
+}
+
+.brand-gallery__thumb {
+  min-width: 0;
+  min-height: var(--tap-target);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  opacity: 0.42;
+  cursor: pointer;
+  transition:
+    opacity var(--dur-micro) var(--ease-out),
+    transform var(--dur-micro) var(--ease-out);
+}
+
+.brand-gallery__thumb.is-active {
+  opacity: 1;
+}
+
+.brand-gallery__thumb img {
+  width: 100%;
+  height: auto;
   aspect-ratio: 3 / 2;
   object-fit: cover;
 }
@@ -606,12 +791,19 @@ a[aria-disabled="true"] {
     background: var(--color-dark-surface);
   }
 
-  .hero__image {
+  .hero .hero__gallery {
     position: relative;
     inset: auto;
     width: 100%;
     height: auto;
     aspect-ratio: 3 / 2;
+  }
+
+  .hero__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .hero__shade {
@@ -627,9 +819,22 @@ a[aria-disabled="true"] {
     padding: var(--space-xl) var(--page-gutter) var(--space-3xl);
   }
 
+  .hero__media-meta {
+    position: absolute;
+    inset-inline: 0;
+    inset-block: auto 0;
+    display: grid;
+    justify-content: stretch;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--page-gutter);
+  }
+
   .hero__caption {
-    inset-block-start: calc(66.666vw - var(--space-xl));
-    inset-block-end: auto;
+    justify-content: space-between;
+  }
+
+  .hero__media-meta > .carousel__controls {
+    justify-self: start;
   }
 }
 
@@ -646,7 +851,7 @@ a[aria-disabled="true"] {
     gap: clamp(var(--space-xl), 6vw, var(--space-4xl));
   }
 
-  .brand-story--kamakura .brand-story__figure,
+  .brand-story--kamakura .brand-gallery,
   .day-step--reverse figure {
     order: 2;
   }
@@ -670,6 +875,20 @@ a[aria-disabled="true"] {
 
   .day-step--closing .day-step__copy {
     justify-self: end;
+  }
+
+  .brand-gallery__meta {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+  }
+
+  .brand-gallery__meta > .carousel__controls {
+    grid-column: auto;
+  }
+
+  .hero__media-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .memory__diptych {
@@ -734,6 +953,15 @@ a[aria-disabled="true"] {
     text-decoration: underline;
     text-underline-offset: var(--space-2xs);
   }
+
+  .carousel__button:hover,
+  .brand-gallery__thumb:hover {
+    opacity: 0.72;
+  }
+
+  .brand-gallery__thumb.is-active:hover {
+    opacity: 1;
+  }
 }
 
 @media (pointer: coarse) {
@@ -755,5 +983,15 @@ a[aria-disabled="true"] {
     animation-duration: var(--dur-micro) !important;
     animation-iteration-count: 1 !important;
     transition-duration: var(--dur-micro) !important;
+  }
+
+  .carousel__slide {
+    transition: none !important;
+  }
+
+  .carousel__button:active,
+  .brand-gallery__thumb:active,
+  .cta-link:active {
+    transform: none;
   }
 }
