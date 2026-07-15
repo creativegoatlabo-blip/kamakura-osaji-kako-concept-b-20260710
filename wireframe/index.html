@@ -6,468 +6,323 @@
     <title>LPワイヤーフレーム｜鎌倉彫金工房 × OSAJI kako</title>
     <meta
       name="description"
-      content="鎌倉彫金工房とOSAJI kakoの蔵前限定タイアップLPについて、情報設計・要素・役割・重要度を確認するためのグレースケールワイヤーフレーム。"
+      content="鎌倉彫金工房とOSAJI kakoの蔵前限定タイアップLPについて、写真・情報・CTAの順序を確認するためのグレースケールワイヤーフレーム。"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260715-wire-2" />
-    <script src="./script.js?v=20260715-wire-2" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=20260715-wire-7" />
+    <script src="./script.js?v=20260715-wire-7" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">本文へ移動</a>
 
-    <header class="site-header" aria-label="サイトヘッダー">
+    <header class="site-header">
       <a class="brand-lockup" href="#top" aria-label="ページ上部へ戻る">
         <span class="logo-slot">OSAJI kako<br />ロゴ想定</span>
-        <span class="brand-lockup__cross" aria-hidden="true">×</span>
+        <span aria-hidden="true">×</span>
         <span class="logo-slot">鎌倉彫金工房<br />ロゴ想定</span>
-        <span class="brand-lockup__mobile" aria-hidden="true">OSAJI kako × 鎌倉彫金工房</span>
+        <span class="brand-lockup__mobile">OSAJI kako × 鎌倉彫金工房</span>
       </a>
-      <nav class="site-nav" aria-label="ページ内ナビゲーション">
-        <a href="#offer">限定特典</a>
-        <a href="#day">一日の流れ</a>
-        <a class="button" href="#booking">空き枠を見る</a>
-      </nav>
+      <div class="header-actions">
+        <button class="annotation-toggle" type="button" data-annotation-toggle aria-pressed="true">
+          設計ラベルを隠す
+        </button>
+        <button class="button button--header" type="button" data-open-reservation>空き日程を見る</button>
+      </div>
     </header>
 
-    <aside class="wire-legend" aria-label="ワイヤーフレームの見方">
-      <div class="wire-legend__inner page-shell">
-        <p class="wire-legend__title">WIREFRAME / 情報設計確認用</p>
-        <ul class="wire-legend__items">
-          <li class="importance-tag">最重要</li>
-          <li class="wire-tag">役割ラベル</li>
-          <li class="status-tag">要確認</li>
-          <li class="wire-tag">写真＝グレー枠</li>
-        </ul>
-      </div>
-    </aside>
-
     <main id="main">
-      <section id="top" class="hero page-shell" aria-labelledby="hero-title">
-        <div class="hero__copy">
-          <div class="section-role">
-            <span class="wire-tag">SECTION 01 / FV</span>
-            <span class="wire-tag">H1</span>
-            <span class="importance-tag">最重要</span>
-          </div>
-          <p class="eyebrow">OSAJI kako × 鎌倉彫金工房｜東京・蔵前限定</p>
-          <h1 id="hero-title">
-            結婚指輪・婚約指輪と、<br class="desktop-break" />
-            これからの家の香りを。<br class="desktop-break" />
-            一日で、ふたりの手から。
-          </h1>
-          <p class="hero__lede">
-            3つのリングプランから選び、ふたりそれぞれの香りとともに形にする、2026年10〜11月限定の一日です。
-          </p>
-          <ul class="fact-chips" aria-label="企画の要点">
-            <li>3つのリングプラン</li>
-            <li>香りは一人1種類</li>
-            <li>本タイアップ限定・5つの特典</li>
-          </ul>
-          <div class="cta-group">
-            <a class="button button--large" href="#booking">開催日と空き枠を見る →</a>
-            <span class="cta-note">CTA / 主要導線｜鎌倉彫金工房で一括予約</span>
-          </div>
-        </div>
-
-        <div class="hero__visual carousel" data-carousel data-autoplay="true" aria-roledescription="カルーセル" aria-label="FV想定写真">
-          <div class="section-role">
-            <span class="wire-tag">画像カルーセル</span>
-            <span class="importance-tag">主要</span>
-          </div>
-          <div class="carousel__viewport">
-            <div class="carousel__track">
-              <div class="carousel__slide is-active" data-carousel-slide data-caption="初期表示：結婚指輪・婚約指輪と香り">
-                <!-- TODO: Replace with real rings and fragrance photo, target size: 1600x1000 -->
-                <figure class="media-placeholder">
-                  <figcaption class="media-placeholder__content">
-                    <span class="media-placeholder__title">結婚指輪・婚約指輪と<br />香りの写真を想定</span>
-                    <span class="media-placeholder__spec">画像 / 16:10 / FV最重要</span>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="carousel__slide" data-carousel-slide data-caption="2枚目：特別ラベルと限定リングケース">
-                <!-- TODO: Replace with real special label and ring case photo, target size: 1600x1000 -->
-                <figure class="media-placeholder">
-                  <figcaption class="media-placeholder__content">
-                    <span class="media-placeholder__title">名前・日付入りラベルと<br />限定リングケースの写真を想定</span>
-                    <span class="media-placeholder__spec">画像 / 16:10 / 特典予告</span>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="carousel__slide" data-carousel-slide data-caption="3枚目：香りに包まれる指輪制作">
-                <!-- TODO: Replace with real ring making and diffuser photo, target size: 1600x1000 -->
-                <figure class="media-placeholder">
-                  <figcaption class="media-placeholder__content">
-                    <span class="media-placeholder__title">専用ディフューザーと<br />指輪制作風景の写真を想定</span>
-                    <span class="media-placeholder__spec">画像 / 16:10 / 体験価値</span>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          </div>
-          <div class="carousel__meta">
-            <p class="carousel__caption"><span data-carousel-caption>初期表示：結婚指輪・婚約指輪と香り</span>｜<span data-carousel-index>01</span> / 03</p>
-            <div class="carousel__controls" aria-label="FV写真の操作">
-              <button class="carousel__button carousel__button--toggle" type="button" data-carousel-toggle aria-pressed="false">一時停止</button>
-              <button class="carousel__button" type="button" data-carousel-prev aria-label="前の写真">←</button>
-              <button class="carousel__button" type="button" data-carousel-next aria-label="次の写真">→</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="guide" class="section section--surface quick-guide" aria-labelledby="guide-title">
-        <div class="content-shell">
-          <header class="section-heading">
-            <div>
-              <div class="section-role">
-                <span class="wire-tag">SECTION 02</span>
-                <span class="wire-tag">H2</span>
-                <span class="importance-tag">高</span>
-              </div>
-              <h2 id="guide-title">東京・蔵前で、選べるリングと香りをつくる一日。</h2>
-            </div>
-            <div class="section-heading__support">
-              <span class="wire-tag">本文 / 参加可否の早期判断</span>
-              <p>日程、枠数、対象プラン、予約方法をFV直下で短く確認できる構成です。</p>
-            </div>
-          </header>
-          <dl class="guide-grid">
-            <div class="guide-item"><dt>場所</dt><dd>東京・蔵前</dd></div>
-            <div class="guide-item"><dt>開催期間</dt><dd>2026年10〜11月</dd></div>
-            <div class="guide-item"><dt>開催曜日</dt><dd>水曜・日曜限定</dd></div>
-            <div class="guide-item"><dt>開催枠</dt><dd>同時間帯2組まで</dd></div>
-            <div class="guide-item"><dt>モデル時間</dt><dd>11:00〜18:00頃</dd></div>
-            <div class="guide-item"><dt>開始時刻</dt><dd>予約時に選択可能</dd></div>
-            <div class="guide-item"><dt>リング</dt><dd>3プランから選択</dd></div>
-            <div class="guide-item"><dt>予約</dt><dd>鎌倉彫金工房で一括</dd></div>
-          </dl>
-        </div>
-      </section>
-
-      <section id="brands" class="section page-shell" aria-labelledby="brands-title">
-        <header class="section-heading">
-          <div>
-            <div class="section-role">
-              <span class="wire-tag">SECTION 03 / ふたつのブランド</span>
-              <span class="wire-tag">H2</span>
-              <span class="importance-tag">高</span>
-            </div>
-            <h2 id="brands-title">これからの暮らしを、香りにする。<br />これからの約束を、指輪にする。</h2>
-          </div>
-          <div class="section-heading__support">
-            <span class="wire-tag">本文 / 相互の信頼を橋渡し</span>
-            <p>沿革や通常サービスは広げず、両ブランドが大切にしていることだけを同じ文字量で紹介します。</p>
-          </div>
-        </header>
-
-        <div class="brand-list">
-          <article class="brand-panel">
-            <div class="brand-panel__media carousel carousel--brand" data-carousel aria-roledescription="カルーセル" aria-label="OSAJI kako想定写真">
-              <div class="section-role"><span class="wire-tag">画像カルーセル / 3枚</span><span class="importance-tag">主要</span></div>
-              <div class="carousel__viewport">
-                <div class="carousel__track">
-                  <div class="carousel__slide is-active" data-carousel-slide data-caption="香りを選ぶ手元">
-                    <!-- TODO: Replace with real scent selection photo, target size: 1200x900 -->
-                    <figure class="media-placeholder"><figcaption class="media-placeholder__content"><span class="media-placeholder__title">香りを選ぶ手元の写真を想定</span><span class="media-placeholder__spec">画像 / 4:3</span></figcaption></figure>
-                  </div>
-                  <div class="carousel__slide" data-carousel-slide data-caption="一滴ずつ調香する手元">
-                    <!-- TODO: Replace with real blending photo, target size: 1200x900 -->
-                    <figure class="media-placeholder"><figcaption class="media-placeholder__content"><span class="media-placeholder__title">一滴ずつ調香する写真を想定</span><span class="media-placeholder__spec">画像 / 4:3</span></figcaption></figure>
-                  </div>
-                  <div class="carousel__slide" data-carousel-slide data-caption="OSAJI kako 蔵前店">
-                    <!-- TODO: Replace with real OSAJI kako Kuramae store photo, target size: 1200x900 -->
-                    <figure class="media-placeholder"><figcaption class="media-placeholder__content"><span class="media-placeholder__title">OSAJI kako 蔵前店の写真を想定</span><span class="media-placeholder__spec">画像 / 4:3</span></figcaption></figure>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel__meta">
-                <p class="carousel__caption"><span data-carousel-caption>香りを選ぶ手元</span>｜<span data-carousel-index>01</span> / 03</p>
-                <div class="carousel__controls">
-                  <button class="carousel__button" type="button" data-carousel-prev aria-label="OSAJI kakoの前の写真">←</button>
-                  <button class="carousel__button" type="button" data-carousel-next aria-label="OSAJI kakoの次の写真">→</button>
-                </div>
-              </div>
-            </div>
-            <div class="brand-panel__copy">
-              <div class="brand-panel__logo">OSAJI kako ロゴを想定</div>
-              <div class="section-role"><span class="wire-tag">H3 / ブランドコンセプト</span></div>
-              <h3>感覚を一滴ずつ重ね、<br />家に寄り添う香りを調える。</h3>
-              <p>ふたりそれぞれが、これからの暮らしを思いながら一人1種類の香りをつくります。</p>
-            </div>
-          </article>
-
-          <article class="brand-panel">
-            <div class="brand-panel__media carousel carousel--brand" data-carousel aria-roledescription="カルーセル" aria-label="鎌倉彫金工房想定写真">
-              <div class="section-role"><span class="wire-tag">画像カルーセル / 3枚</span><span class="importance-tag">主要</span></div>
-              <div class="carousel__viewport">
-                <div class="carousel__track">
-                  <div class="carousel__slide is-active" data-carousel-slide data-caption="結婚指輪を制作する手元">
-                    <!-- TODO: Replace with real ring making photo, target size: 1200x900 -->
-                    <figure class="media-placeholder"><figcaption class="media-placeholder__content"><span class="media-placeholder__title">結婚指輪を制作する手元の写真を想定</span><span class="media-placeholder__spec">画像 / 4:3</span></figcaption></figure>
-                  </div>
-                  <div class="carousel__slide" data-carousel-slide data-caption="完成した婚約指輪・結婚指輪">
-                    <!-- TODO: Replace with real bridal rings photo, target size: 1200x900 -->
-                    <figure class="media-placeholder"><figcaption class="media-placeholder__content"><span class="media-placeholder__title">完成した婚約指輪・結婚指輪の写真を想定</span><span class="media-placeholder__spec">画像 / 4:3</span></figcaption></figure>
-                  </div>
-                  <div class="carousel__slide" data-carousel-slide data-caption="東京・蔵前店の制作空間">
-                    <!-- TODO: Replace with real Kamakura Chokin Kuramae store photo, target size: 1200x900 -->
-                    <figure class="media-placeholder"><figcaption class="media-placeholder__content"><span class="media-placeholder__title">鎌倉彫金工房 東京・蔵前店の写真を想定</span><span class="media-placeholder__spec">画像 / 4:3</span></figcaption></figure>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel__meta">
-                <p class="carousel__caption"><span data-carousel-caption>結婚指輪を制作する手元</span>｜<span data-carousel-index>01</span> / 03</p>
-                <div class="carousel__controls">
-                  <button class="carousel__button" type="button" data-carousel-prev aria-label="鎌倉彫金工房の前の写真">←</button>
-                  <button class="carousel__button" type="button" data-carousel-next aria-label="鎌倉彫金工房の次の写真">→</button>
-                </div>
-              </div>
-            </div>
-            <div class="brand-panel__copy">
-              <div class="brand-panel__logo">鎌倉彫金工房 ロゴを想定</div>
-              <div class="section-role"><span class="wire-tag">H3 / ブランドコンセプト</span></div>
-              <h3>金属を叩き、曲げ、磨き、<br />ふたりの約束を形にする。</h3>
-              <p>結婚指輪、婚約指輪、または両方をつくる3本コースから選び、職人とともに形にします。</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="reason" class="section section--surface" aria-labelledby="reason-title">
-        <div class="page-shell">
-          <header class="section-heading">
-            <div>
-              <div class="section-role"><span class="wire-tag">SECTION 04 / ふたつが出会う理由</span><span class="wire-tag">H2</span><span class="importance-tag">高</span></div>
-              <h2 id="reason-title">違うかたちで、<br />同じ一日を残していく。</h2>
-            </div>
-            <div class="section-heading__support">
-              <span class="wire-tag">本文 / タイアップの必然性</span>
-              <p>二つを別々に体験するだけではなく、午前の香りが午後の指輪制作と、その後の暮らしにつながることを示します。</p>
-            </div>
-          </header>
-
-          <div class="reason-layout">
-            <div class="reason-copy">
-              <p class="reason-copy__statement">午前につくった二人の香りが、午後の指輪制作の空間を包む。</p>
-              <p>完成後は、蓋をアロマディフューザーとして使える限定リングケースが、その日の香りと指輪を暮らしの中で再び結びます。</p>
-              <div class="reason-sequence" aria-label="体験のつながり">
-                <div class="sequence-item"><span class="sequence-item__number">01 / 午前</span><p>ふたりの香りをつくる</p></div>
-                <div class="sequence-item"><span class="sequence-item__number">02 / 午後</span><p>香りに包まれて指輪をつくる</p></div>
-                <div class="sequence-item"><span class="sequence-item__number">03 / その後</span><p>ケースで香りと指輪を暮らしへ</p></div>
-              </div>
-            </div>
-            <!-- TODO: Replace with real three-scene sequence photo, target size: 1600x900 -->
-            <figure class="media-placeholder media-placeholder--wide">
-              <figcaption class="media-placeholder__content">
-                <span class="media-placeholder__title">調香 → 香りの中で指輪制作 →<br />リングケースの3場面写真を想定</span>
-                <span class="media-placeholder__spec">画像 / 16:9 / 体験の接続を証明</span>
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <div class="hero__media photo-composition">
+          <figure class="media-placeholder media-placeholder--hero">
+            <figcaption>
+              <strong>ふたりの手、完成した結婚指輪・婚約指輪、<br />名前入りの香り、限定リングケースが<br />同時に分かる横位置写真を想定</strong>
+              <span>主画像 / 16:10 / 最重要</span>
+            </figcaption>
+          </figure>
+          <div class="photo-composition__support">
+            <figure class="media-placeholder">
+              <figcaption>
+                <strong>男女ともに香りを調える写真を想定</strong>
+                <span>補助画像 / 4:3</span>
+              </figcaption>
+            </figure>
+            <figure class="media-placeholder">
+              <figcaption>
+                <strong>ディフューザーのそばで<br />指輪を制作する写真を想定</strong>
+                <span>補助画像 / 4:3</span>
               </figcaption>
             </figure>
           </div>
+          <span class="annotation annotation--media">役割：1秒で企画を理解｜重要度：最重要</span>
         </div>
+
+        <div class="hero__copy">
+          <p class="hero__brand">OSAJI kako × 鎌倉彫金工房｜東京・蔵前限定</p>
+          <h1 id="hero-title">結婚指輪・婚約指輪と、<br />ふたりの香りをつくる一日。</h1>
+          <p class="hero__lede">結婚指輪2本・婚約指輪1本・両方の3本制作から選べます。</p>
+          <a class="text-cta" href="#encounter">香りから始まる一日を見る <span aria-hidden="true">↓</span></a>
+          <span class="annotation">役割：H1＋導入｜次への役割：「なぜ同じ日に？」をつくる</span>
+        </div>
+
+        <dl class="hero-facts" aria-label="開催概要">
+          <div><dt>場所</dt><dd>東京・蔵前</dd></div>
+          <div><dt>開催</dt><dd>10〜11月・水／日</dd></div>
+          <div><dt>モデル</dt><dd>11:00〜18:00頃</dd></div>
+          <div><dt>予約</dt><dd>2店舗を一括受付</dd></div>
+        </dl>
       </section>
 
-      <section id="day" class="section page-shell" aria-labelledby="day-title">
-        <header class="section-heading">
-          <div>
-            <div class="section-role"><span class="wire-tag">SECTION 05 / モデルコース</span><span class="wire-tag">H2</span><span class="importance-tag">高</span></div>
-            <h2 id="day-title">蔵前で過ごす、<br />おすすめの一日。</h2>
-          </div>
-          <div class="section-heading__support">
-            <span class="wire-tag">本文 / 予約後の体験を想像</span>
-            <p>掲載時間はモデルです。開始時刻は予約時に選択でき、基本の流れは香りづくりから指輪づくりへ続きます。</p>
-          </div>
-        </header>
-
-        <ol class="course-list">
-          <li class="course-step">
-            <time class="course-step__time" datetime="11:00">11:00</time>
-            <div class="course-step__copy"><span class="wire-tag">H3 / STEP 01</span><h3>名前と日付を入れる香りをつくる。</h3><p>ふたりそれぞれ、一人1種類。スプレーまたはオイルタイプから選びます。</p></div>
-            <!-- TODO: Replace with real fragrance making photo, target size: 1200x800 -->
-            <figure class="course-step__media media-placeholder media-placeholder--landscape"><figcaption class="media-placeholder__content"><span class="media-placeholder__title">香りづくりの手元写真を想定</span><span class="media-placeholder__spec">画像 / 3:2 / 横位置</span></figcaption></figure>
-          </li>
-          <li class="course-step">
-            <time class="course-step__time" datetime="12:30">12:30頃</time>
-            <div class="course-step__copy"><span class="wire-tag">H3 / STEP 02</span><h3>ランチと、蔵前の街歩き。</h3><p>ふたつの体験の間は、ふたりの自由時間として短く紹介します。</p></div>
-            <!-- TODO: Replace with real Kuramae lunch or streetscape photo, target size: 1200x800 -->
-            <figure class="course-step__media media-placeholder media-placeholder--landscape"><figcaption class="media-placeholder__content"><span class="media-placeholder__title">蔵前のランチ・街歩き写真を想定</span><span class="media-placeholder__spec">画像 / 3:2 / 補足</span></figcaption></figure>
-          </li>
-          <li class="course-step">
-            <time class="course-step__time" datetime="15:00">15:00</time>
-            <div class="course-step__copy"><span class="wire-tag">H3 / STEP 03</span><h3>二人の香りに包まれて、指輪をつくる。</h3><p>専用ディフューザーで香りを配置し、結婚指輪・婚約指輪を制作します。</p><span class="status-tag">2種類の香りの運用方法は要確認</span></div>
-            <!-- TODO: Replace with real ring making and diffuser photo, target size: 1200x800 -->
-            <figure class="course-step__media media-placeholder media-placeholder--landscape"><figcaption class="media-placeholder__content"><span class="media-placeholder__title">ディフューザーと指輪制作が<br />同時に分かる写真を想定</span><span class="media-placeholder__spec">画像 / 3:2 / 最優先</span></figcaption></figure>
-          </li>
-          <li class="course-step">
-            <time class="course-step__time">終了後</time>
-            <div class="course-step__copy"><span class="wire-tag">H3 / STEP 04</span><h3>香り、特典、当日完成分を持ち帰る。</h3><p>当日と後日受取の条件は、次の「完成・受取」で明確にします。</p><span class="status-tag">3本制作の所要時間は要確認</span></div>
-            <!-- TODO: Replace with real take-home items photo, target size: 1200x800 -->
-            <figure class="course-step__media media-placeholder media-placeholder--landscape"><figcaption class="media-placeholder__content"><span class="media-placeholder__title">香り・指輪・限定ケースを並べた写真を想定</span><span class="media-placeholder__spec">画像 / 3:2 / 成果物</span></figcaption></figure>
-          </li>
-        </ol>
-      </section>
-
-      <section id="offer" class="section section--surface" aria-labelledby="offer-title">
-        <div class="page-shell">
-          <header class="section-heading">
-            <div>
-              <div class="section-role"><span class="wire-tag">SECTION 06 / タイアップ限定オファー</span><span class="wire-tag">H2</span><span class="importance-tag">最重要</span></div>
-              <h2 id="offer-title">この日だけの仕立てを、<br />香りと指輪のそばに。</h2>
-            </div>
-            <div class="section-heading__support">
-              <span class="wire-tag">本文 / この企画を選ぶ理由</span>
-              <p>体験価値の3項目を写真で強く見せ、10%OFFとスキンケアパウチも誤解なく明示します。</p>
-            </div>
+      <section id="encounter" class="section section--emotional encounter" aria-labelledby="encounter-title">
+        <div class="section-shell">
+          <header class="encounter__heading">
+            <p class="section-kicker">ふたつが出会って、初めて生まれる体験</p>
+            <h2 id="encounter-title">午前につくった、ふたりの香りに包まれて。<br />午後、ふたりの指輪をつくる。</h2>
+            <span class="annotation">役割：H2／タイアップの必然性｜重要度：最重要</span>
           </header>
 
-          <!-- TODO: Replace with real special label, ring case and diffuser photo, target size: 1600x900 -->
-          <figure class="offer-visual media-placeholder media-placeholder--wide">
-            <figcaption class="media-placeholder__content">
-              <span class="media-placeholder__title">特別ラベル・限定リングケース・<br />制作中ディフューザーの写真を想定</span>
-              <span class="media-placeholder__spec">画像 / 16:9 / 限定性の主要ビジュアル</span>
-            </figcaption>
-          </figure>
-
-          <div class="offer-columns">
-            <article class="offer-column">
-              <header class="offer-column__head"><span class="wire-tag">OSAJI kako / 3特典</span><h3>香りに添える、3つの特別。</h3></header>
-              <ol class="offer-list">
-                <li class="offer-item"><span class="offer-item__number">01</span><div class="offer-item__body"><h4>二人の名前・日付入り特別ラベル</h4><p>パーソナライズ内容が一目で分かる実物写真を配置。</p><span class="status-tag">付与数量・入力期限は要確認</span></div></li>
-                <li class="offer-item"><span class="offer-item__number">02</span><div class="offer-item__body"><h4>OSAJI kako会計時の販売価格から10%OFF</h4><p>指輪は割引対象外であることを近接表示。</p></div></li>
-                <li class="offer-item"><span class="offer-item__number">03</span><div class="offer-item__body"><h4>OSAJIスキンケアパウチ2点</h4><p>主役にしすぎず、明瞭な補助特典として掲載。</p><span class="status-tag">二人合計か一人2点か要確認</span></div></li>
-              </ol>
+          <div class="encounter__story">
+            <article class="brand-story">
+              <div class="brand-gallery">
+                <figure class="media-placeholder brand-gallery__main">
+                  <figcaption><strong>ふたりで香りを選ぶ写真を想定</strong><span>主画像 / 4:3</span></figcaption>
+                </figure>
+                <figure class="media-placeholder">
+                  <figcaption><strong>一滴ずつ調える手元</strong><span>補助 / 4:3</span></figcaption>
+                </figure>
+                <figure class="media-placeholder">
+                  <figcaption><strong>名前入りの完成品</strong><span>補助 / 4:3</span></figcaption>
+                </figure>
+              </div>
+              <div class="brand-story__copy">
+                <p class="brand-logo">OSAJI kako ロゴ想定</p>
+                <h3>感覚を一滴ずつ重ね、<br />暮らしに寄り添う香りへ。</h3>
+                <p>2人それぞれが、スプレーかオイルを選び、一人1種類の香りをつくります。</p>
+              </div>
             </article>
 
-            <article class="offer-column">
-              <header class="offer-column__head"><span class="wire-tag">鎌倉彫金工房 / 2特典</span><h3>指輪づくりを包む、2つの特別。</h3></header>
-              <ol class="offer-list" start="4">
-                <li class="offer-item"><span class="offer-item__number">04</span><div class="offer-item__body"><h4>本タイアップ限定オリジナルリングケース</h4><p>上蓋をアロマディフューザーとして利用できます。</p><span class="status-tag">付与数量・使用上の注意は要確認</span></div></li>
-                <li class="offer-item"><span class="offer-item__number">05</span><div class="offer-item__body"><h4>二人の香りに包まれる指輪制作</h4><p>制作中、二人がつくった香りを専用ディフューザーで配置。</p><span class="status-tag">香りに敏感な場合の対応は要確認</span></div></li>
-              </ol>
+            <article class="brand-story brand-story--reverse">
+              <div class="brand-gallery">
+                <figure class="media-placeholder brand-gallery__main">
+                  <figcaption><strong>2人が並んで指輪を制作する写真を想定</strong><span>主画像 / 4:3</span></figcaption>
+                </figure>
+                <figure class="media-placeholder">
+                  <figcaption><strong>金属を叩く手元</strong><span>補助 / 4:3</span></figcaption>
+                </figure>
+                <figure class="media-placeholder">
+                  <figcaption><strong>完成リングを着けた2人</strong><span>補助 / 4:3</span></figcaption>
+                </figure>
+              </div>
+              <div class="brand-story__copy">
+                <p class="brand-logo">鎌倉彫金工房 ロゴ想定</p>
+                <h3>叩き、曲げ、磨き、<br />ふたりの約束を形に。</h3>
+                <p>職人のサポートのもと、自分たちの手でブライダルリングを仕立てます。</p>
+              </div>
             </article>
           </div>
+
+          <a class="next-prompt" href="#day">モデルコースを見る <span aria-hidden="true">↓</span></a>
+          <span class="annotation annotation--block">次への役割：体験の順序を見たくなる</span>
         </div>
       </section>
 
-      <section id="completion" class="section page-shell" aria-labelledby="completion-title">
-        <header class="section-heading">
-          <div>
-            <div class="section-role"><span class="wire-tag">SECTION 07 / 完成・受取</span><span class="wire-tag">H2</span><span class="importance-tag">高</span></div>
-            <h2 id="completion-title">その日に完成するもの、<br />後日受け取るもの。</h2>
-          </div>
-          <div class="section-heading__support">
-            <span class="wire-tag">本文 / 受取時期の不安を解消</span>
-            <p>香り、指輪、限定ケースを主役にし、当日／後日の条件を短いラベルで判別できるようにします。</p>
-          </div>
-        </header>
-
-        <div class="completion-layout">
-          <!-- TODO: Replace with real fragrance, rings and ring case photo, target size: 1200x800 -->
-          <figure class="media-placeholder media-placeholder--landscape">
-            <figcaption class="media-placeholder__content"><span class="media-placeholder__title">二人の香り＋指輪＋限定ケースの写真を想定</span><span class="media-placeholder__spec">画像 / 3:2 / 主成果物</span></figcaption>
-          </figure>
-          <div class="completion-cards">
-            <article class="completion-card"><span class="completion-card__type">香り</span><div class="completion-card__body"><h3>一人1種類の香り</h3><p>名前・日付入り特別ラベル。スプレーまたはオイルタイプ。</p></div><span class="receipt-label">当日持ち帰り</span></article>
-            <article class="completion-card"><span class="completion-card__type">限定特典</span><div class="completion-card__body"><h3>リングケース・パウチ</h3><p>付与数量はプラン別の正式情報を反映。</p></div><span class="status-tag">数量要確認</span></article>
-            <article class="completion-card"><span class="completion-card__type">指輪</span><div class="completion-card__body"><h3>3プランから選択</h3><p>石留め・その他加工オプションがない場合のみ当日持ち帰り。</p></div><span class="receipt-label">条件付き当日</span></article>
-            <article class="completion-card"><span class="completion-card__type">加工あり</span><div class="completion-card__body"><h3>石留め等の加工</h3><p>婚約指輪を含む後日受取条件と目安を正式情報に合わせて掲載。</p></div><span class="receipt-label">後日受取</span></article>
-          </div>
-        </div>
-      </section>
-
-      <section id="booking" class="section section--surface" aria-labelledby="booking-title">
-        <div class="page-shell">
-          <header class="section-heading">
-            <div>
-              <div class="section-role"><span class="wire-tag">SECTION 08 / 予約前のご案内</span><span class="wire-tag">H2</span><span class="importance-tag">高</span></div>
-              <h2 id="booking-title">開催概要と、<br />3つのリングプラン。</h2>
-            </div>
-            <div class="section-heading__support">
-              <span class="wire-tag">本文 / 二人で予約判断</span>
-              <p>日程、枠数、予約方法、対象プラン、限定特典を一か所で最終確認します。料金そのものは掲載しません。</p>
-            </div>
+      <section id="day" class="section section--emotional day" aria-labelledby="day-title">
+        <div class="section-shell">
+          <header class="section-heading section-heading--center">
+            <h2 id="day-title">香りから指輪へ。<br />蔵前で過ごす一日。</h2>
+            <p>モデルコースは11:00スタート。体験の間は、ふたりで自由に過ごせます。</p>
+            <span class="annotation">役割：H2＋補足｜重要度：高</span>
           </header>
 
-          <div class="booking-layout">
-            <div class="booking-summary">
-              <span class="wire-tag">CTA前の要約</span>
-              <p>予約は両店舗分を鎌倉彫金工房で一括受付。まず空き枠確認から始めます。</p>
-              <a class="button button--large" href="#final">開催日と空き枠を見る →</a>
-              <span class="cta-note">遷移先：空き枠確認ページを想定</span>
+          <ol class="day-track" aria-label="モデルコース">
+            <li class="day-card">
+              <p class="day-card__time">11:00</p>
+              <figure class="media-placeholder">
+                <figcaption><strong>2人が香りを調える写真を想定</strong><span>画像 / 3:2</span></figcaption>
+              </figure>
+              <div><h3>OSAJI kako</h3><p>一人1種類。スプレーかオイルを選びます。</p></div>
+            </li>
+            <li class="day-card day-card--bridge">
+              <p class="day-card__time">12:30頃</p>
+              <figure class="media-placeholder">
+                <figcaption><strong>蔵前の街歩き・ランチの小さなカット</strong><span>画像 / 3:2</span></figcaption>
+              </figure>
+              <div><h3>ふたりの自由時間</h3><p>食事や散策へ。次の体験まで拘束されません。</p></div>
+            </li>
+            <li class="day-card">
+              <p class="day-card__time">15:00</p>
+              <figure class="media-placeholder">
+                <figcaption><strong>香りとともに指輪を制作する写真を想定</strong><span>画像 / 3:2</span></figcaption>
+              </figure>
+              <div><h3>鎌倉彫金工房</h3><p>午前につくった香りを専用ディフューザーで感じながら制作します。</p></div>
+            </li>
+            <li class="day-card">
+              <p class="day-card__time">18:00頃</p>
+              <figure class="media-placeholder">
+                <figcaption><strong>完成した指輪と香りを持つ2人の写真を想定</strong><span>画像 / 3:2</span></figcaption>
+              </figure>
+              <div><h3>今日の記憶を持ち帰る</h3><p>終了時刻は選ぶリングや加工内容により異なります。</p></div>
+            </li>
+          </ol>
+
+          <div class="mid-cta">
+            <button class="button button--large" type="button" data-open-reservation>蔵前限定コースの空き日程を見る</button>
+            <p>鎌倉彫金工房で2店舗分をまとめて受付</p>
+            <span class="annotation">役割：初回の予約CTA｜想像後の行動機会</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="offer" class="section offer" aria-labelledby="offer-title">
+        <div class="section-shell">
+          <header class="section-heading">
+            <div>
+              <p class="section-kicker">通常の2店舗体験では、得られないもの</p>
+              <h2 id="offer-title">香りと指輪をつなぐ、<br />5つの限定特典。</h2>
             </div>
+            <p>目立たせるのは、タイアップだから実現できる3つ。価格特典は補助情報として明確に伝えます。</p>
+            <span class="annotation">役割：通常予約との差をつくる｜重要度：最重要</span>
+          </header>
 
-            <dl class="booking-specs">
-              <div class="booking-row"><dt>開催期間・曜日</dt><dd>2026年10〜11月／水曜・日曜</dd></div>
-              <div class="booking-row"><dt>開催枠</dt><dd>同時間帯2組まで</dd></div>
-              <div class="booking-row"><dt>モデル時間</dt><dd>kako 11:00〜／鎌倉彫金工房 15:00〜<small>開始時刻は選択可能</small></dd></div>
-              <div class="booking-row"><dt>リングプラン</dt><dd><div class="plan-options"><span class="plan-option">結婚指輪 2本<small>PLAN 01</small></span><span class="plan-option">婚約指輪 1本<small>PLAN 02</small></span><span class="plan-option">結婚指輪2本＋婚約指輪1本<small>PLAN 03</small></span></div><span class="status-tag">3本制作の時間枠は要確認</span></dd></div>
-              <div class="booking-row"><dt>香り</dt><dd>一人1種類<small>スプレーまたはオイルタイプから選択</small></dd></div>
-              <div class="booking-row"><dt>限定特典</dt><dd>本タイアップ限定・5つの特典<a class="text-link" href="#offer">5特典を確認する →</a></dd></div>
-              <div class="booking-row"><dt>10%OFF対象</dt><dd>OSAJI kako会計時の販売価格のみ<small>指輪は割引対象外</small></dd></div>
-              <div class="booking-row"><dt>予約窓口</dt><dd>鎌倉彫金工房で両店舗を一括予約</dd></div>
-            </dl>
+          <div class="offer-leads">
+            <article class="offer-feature offer-feature--wide">
+              <figure class="media-placeholder">
+                <figcaption><strong>専用ディフューザーを置いた<br />実際の指輪制作風景を想定</strong><span>画像 / 16:10</span></figcaption>
+              </figure>
+              <div><p class="offer-number">01</p><h3>ふたりの香りに包まれる指輪制作</h3><p>午前につくった2人の香りを、制作台の専用ディフューザーへ。</p></div>
+            </article>
+            <article class="offer-feature">
+              <figure class="media-placeholder">
+                <figcaption><strong>リングと、蓋の使い方が分かる<br />限定ケースの写真を想定</strong><span>画像 / 4:3</span></figcaption>
+              </figure>
+              <div><p class="offer-number">02</p><h3>香りが続く、限定リングケース</h3><p>蓋をアロマディフューザーとして使える、タイアップ限定の仕様です。</p></div>
+            </article>
+            <article class="offer-feature">
+              <figure class="media-placeholder">
+                <figcaption><strong>2人の名前・日付が読める<br />特別ラベルの写真を想定</strong><span>画像 / 4:3</span></figcaption>
+              </figure>
+              <div><p class="offer-number">03</p><h3>名前と日付を入れた特別ラベル</h3><p>ふたりの節目を、香りのボトルにも残します。</p></div>
+            </article>
+          </div>
+
+          <div class="offer-support">
+            <article><p class="offer-number">04</p><h3>OSAJI kakoの会計が10%OFF</h3><p>会計時の販売価格のみ対象。指輪は割引対象外です。</p></article>
+            <article><p class="offer-number">05</p><h3>OSAJI スキンケアパウチ2点</h3><p>体験の余韻とともに持ち帰れる限定特典です。</p></article>
+          </div>
+
+          <a class="next-prompt" href="#plans">3つのリングプランを見る <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section id="plans" class="section section--compact plans" aria-labelledby="plans-title">
+        <div class="section-shell">
+          <header class="section-heading">
+            <div><h2 id="plans-title">ふたりがつくりたい指輪から、<br />選べます。</h2></div>
+            <p>結婚指輪、婚約指輪、または両方。3つのリングプランが対象です。</p>
+            <span class="annotation">役割：対象確認＋品質不安の解消｜重要度：高</span>
+          </header>
+
+          <div class="plan-grid">
+            <article class="plan-card">
+              <figure class="media-placeholder"><figcaption><strong>結婚指輪2本の完成写真を想定</strong><span>画像 / 3:2</span></figcaption></figure>
+              <p class="plan-card__index">PLAN 1</p><h3>結婚指輪 2本</h3><p>ふたりの結婚指輪を同じ日に制作。</p>
+            </article>
+            <article class="plan-card">
+              <figure class="media-placeholder"><figcaption><strong>婚約指輪1本の完成写真を想定</strong><span>画像 / 3:2</span></figcaption></figure>
+              <p class="plan-card__index">PLAN 2</p><h3>婚約指輪 1本</h3><p>婚約指輪を手づくりするプラン。</p>
+            </article>
+            <article class="plan-card">
+              <figure class="media-placeholder"><figcaption><strong>結婚指輪2本＋婚約指輪1本の写真を想定</strong><span>画像 / 3:2</span></figcaption></figure>
+              <p class="plan-card__index">PLAN 3</p><h3>結婚指輪2本＋婚約指輪1本</h3><p>3本をまとめて制作するプラン。</p>
+            </article>
+          </div>
+
+          <div class="quality-grid">
+            <article><h3>職人がそばでサポート</h3><p>初めてでも、工程ごとに確認しながら進めます。</p></article>
+            <article><h3>当日持ち帰れる条件</h3><p>石留め・その他加工オプションがない指輪は、当日持ち帰れます。</p></article>
+            <article><h3>加工がある場合</h3><p>完成後に改めて受け取ります。納期・受取方法は予約時に確認します。</p></article>
           </div>
         </div>
       </section>
 
-      <section id="faq" class="section page-shell" aria-labelledby="faq-title">
-        <header class="section-heading">
-          <div>
-            <div class="section-role"><span class="wire-tag">SECTION 09 / FAQ</span><span class="wire-tag">H2</span><span class="importance-tag">中</span></div>
-            <h2 id="faq-title">よくある質問</h2>
+      <section id="guide" class="section section--compact guide" aria-labelledby="guide-title">
+        <div class="content-shell">
+          <header class="section-heading section-heading--center">
+            <h2 id="guide-title">ふたりの予定に合うか、<br />ここで確認。</h2>
+            <span class="annotation">役割：参加条件の最終確認｜重要度：高</span>
+          </header>
+          <dl class="guide-list">
+            <div><dt>開催期間</dt><dd>2026年10〜11月</dd></div>
+            <div><dt>開催曜日</dt><dd>水曜・日曜のみ</dd></div>
+            <div><dt>開催枠</dt><dd>同時間帯2組まで</dd></div>
+            <div><dt>モデルコース</dt><dd>OSAJI kako 11:00／鎌倉彫金工房 15:00</dd></div>
+            <div><dt>開始時刻</dt><dd>予約時に選択可能</dd></div>
+            <div><dt>予約方法</dt><dd>鎌倉彫金工房で両店舗分を一括予約</dd></div>
+          </dl>
+          <div class="mid-cta">
+            <button class="button button--large" type="button" data-open-reservation>蔵前限定コースの空き日程を見る</button>
+            <p>水曜・日曜限定｜同時間帯2組まで</p>
           </div>
-          <div class="section-heading__support">
-            <span class="wire-tag">アコーディオン / 2〜3文回答</span>
-            <p>共通、リング、限定特典の3群に分け、予約前に発生しやすい不安だけを扱います。</p>
-          </div>
-        </header>
-
-        <div class="faq-groups">
-          <section class="faq-group" aria-labelledby="faq-common"><h3 id="faq-common">参加・予約</h3>
-            <details class="faq-item"><summary>婚約指輪1本のプランでも二人で参加できますか？</summary><div class="faq-item__answer"><p>二人で参加する企画として想定しています。正式な参加条件を確定後、ここに明記します。</p><span class="status-tag">正式確認</span></div></details>
-            <details class="faq-item"><summary>開始時刻は選べますか？</summary><div class="faq-item__answer"><p>選択可能です。モデルコースはkako 11:00、鎌倉彫金工房15:00開始です。</p></div></details>
-            <details class="faq-item"><summary>変更・キャンセルはどこへ連絡しますか？</summary><div class="faq-item__answer"><p>各店舗への連絡を予定しています。正式窓口が決まり次第、予約完了時と本ページに記載します。</p><span class="status-tag">窓口未定</span></div></details>
-          </section>
-
-          <section class="faq-group" aria-labelledby="faq-ring"><h3 id="faq-ring">指輪・受取</h3>
-            <details class="faq-item"><summary>3つのリングプランから選べますか？</summary><div class="faq-item__answer"><p>結婚指輪2本、婚約指輪1本、両方をつくる3本コースのいずれかを選べます。</p></div></details>
-            <details class="faq-item"><summary>指輪は当日持ち帰れますか？</summary><div class="faq-item__answer"><p>石留め・その他加工オプションがない場合は当日持ち帰れます。加工がある場合は後日受取です。</p></div></details>
-            <details class="faq-item"><summary>3本制作にはどれくらい時間がかかりますか？</summary><div class="faq-item__answer"><p>所要時間を確認中です。開催枠と合わせて、誤解のない時間を掲載します。</p><span class="status-tag">所要時間要確認</span></div></details>
-          </section>
-
-          <section class="faq-group" aria-labelledby="faq-benefit"><h3 id="faq-benefit">香り・限定特典</h3>
-            <details class="faq-item"><summary>香りは何種類つくれますか？</summary><div class="faq-item__answer"><p>一人1種類です。スプレーまたはオイルタイプから選べます。</p></div></details>
-            <details class="faq-item"><summary>名前と日付はいつ入力しますか？</summary><div class="faq-item__answer"><p>入力方法と期限を確認中です。予約導線の中で間違いなく指定できる設計にします。</p><span class="status-tag">運用要確認</span></div></details>
-            <details class="faq-item"><summary>制作中、二人の香りはどう使いますか？</summary><div class="faq-item__answer"><p>専用ディフューザーで指輪制作スペースに配置します。2種類の使い分けは運用確定後に明記します。</p><span class="status-tag">運用要確認</span></div></details>
-            <details class="faq-item"><summary>限定リングケースはどう使いますか？</summary><div class="faq-item__answer"><p>上蓋をアロマディフューザーとして利用できます。具体的な使い方と注意事項は実物仕様に合わせます。</p><span class="status-tag">仕様要確認</span></div></details>
-          </section>
         </div>
       </section>
 
-      <section id="final" class="section section--surface" aria-labelledby="final-title">
-        <div class="page-shell final-layout">
-          <!-- TODO: Replace with real final still life photo, target size: 1600x900 -->
-          <figure class="media-placeholder media-placeholder--wide">
-            <figcaption class="media-placeholder__content"><span class="media-placeholder__title">香り・結婚指輪／婚約指輪・<br />限定リングケースの写真を想定</span><span class="media-placeholder__spec">画像 / 16:9 / 最終確認</span></figcaption>
+      <section id="faq" class="section section--compact faq" aria-labelledby="faq-title">
+        <div class="content-shell">
+          <header class="section-heading section-heading--center"><h2 id="faq-title">予約前の疑問にお答えします。</h2></header>
+          <div class="faq-list">
+            <details><summary>結婚指輪だけ、婚約指輪だけでも対象ですか？</summary><p>はい。結婚指輪2本、婚約指輪1本、両方をつくる3本制作の3プランが対象です。</p></details>
+            <details><summary>香りは何種類つくれますか？</summary><p>一人1種類です。スプレータイプかオイルタイプを選べます。</p></details>
+            <details><summary>指輪は当日持ち帰れますか？</summary><p>石留めやその他加工オプションがなければ当日持ち帰れます。加工がある場合は後日のお渡しです。</p></details>
+            <details><summary>10%OFFは指輪にも適用されますか？</summary><p>対象はOSAJI kako会計時の販売価格のみです。指輪は対象外です。</p></details>
+            <details><summary>2店舗へ別々に予約が必要ですか？</summary><p>いいえ。鎌倉彫金工房で両店舗分をまとめて予約できます。</p></details>
+            <details><summary>変更・キャンセルはどこへ連絡しますか？</summary><p>各店舗へのご連絡を予定しています。正式な窓口は予約時にご案内します。</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section id="reserve" class="final section--emotional" aria-labelledby="reserve-title">
+        <div class="section-shell final__grid">
+          <figure class="media-placeholder final__media">
+            <figcaption><strong>完成した指輪、名前入りの香り、<br />限定ケースが暮らしの中にある写真を想定</strong><span>画像 / 16:10</span></figcaption>
           </figure>
-          <div class="final-copy">
-            <div class="section-role"><span class="wire-tag">SECTION 10 / 最終CTA</span><span class="wire-tag">H2</span><span class="importance-tag">最重要</span></div>
-            <h2 id="final-title">この一日を、<br />ふたりの予定に。</h2>
-            <p>2026年10〜11月、水曜・日曜、同時間帯2組まで。3つのリングプランと限定5特典を確認して、まず空き枠をご覧ください。</p>
-            <div class="cta-group"><a class="button button--large" href="#booking">開催日と空き枠を見る →</a><span class="cta-note">CTA / 主要導線</span></div>
+          <div class="final__copy">
+            <h2 id="reserve-title">この一日を、<br />ふたりの予定に。</h2>
+            <ol class="booking-steps">
+              <li><span>1</span>3つのリングプランから選ぶ</li>
+              <li><span>2</span>開催日と開始時刻を選ぶ</li>
+              <li><span>3</span>鎌倉彫金工房で2店舗分を予約</li>
+            </ol>
+            <button class="button button--final" type="button" data-open-reservation>蔵前限定コースの空き日程を見る</button>
+            <button class="share-button" type="button" data-share>パートナーにこのページを共有</button>
+            <p class="final__note">空き日程の確認だけでは予約確定になりません。</p>
+            <span class="annotation">役割：最終CTA｜重要度：最重要</span>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer page-shell">
-      <p>OSAJI kako × 鎌倉彫金工房｜東京・蔵前限定タイアップ</p>
-      <p class="footer__note">WIREFRAME v2 / 2026-07-15</p>
+    <footer class="site-footer">
+      <p>OSAJI kako × 鎌倉彫金工房</p>
+      <p>ふたりの人生のはじまりを、香りと指輪の記憶に。</p>
     </footer>
 
-    <aside class="sticky-cta" aria-label="固定予約導線" data-sticky-cta>
-      <div class="sticky-cta__copy"><strong>固定CTA / 主要導線</strong><small>水・日限定｜同時間帯2組まで</small></div>
-      <a class="button" href="#booking">空き枠を見る →</a>
-    </aside>
+    <div class="sticky-cta" data-sticky-cta aria-hidden="true">
+      <p>水・日限定｜同時間帯2組まで</p>
+      <button class="button" type="button" data-open-reservation>空き日程を見る</button>
+    </div>
+
+    <dialog class="reservation-dialog" data-reservation-dialog aria-labelledby="dialog-title">
+      <div class="reservation-dialog__inner">
+        <button class="dialog-close" type="button" data-close-reservation aria-label="閉じる">×</button>
+        <p class="annotation annotation--static">ワイヤーフレーム上の予約遷移イメージ</p>
+        <h2 id="dialog-title">空き日程の確認へ</h2>
+        <p>本番では鎌倉彫金工房の予約画面へ移動し、以下を順に選ぶ想定です。</p>
+        <ol class="booking-steps">
+          <li><span>1</span>リングプラン</li>
+          <li><span>2</span>水曜・日曜の空き日程</li>
+          <li><span>3</span>開始時刻・お客様情報</li>
+        </ol>
+        <button class="button button--large" type="button" disabled aria-disabled="true">実予約URL確定後に接続</button>
+        <p class="dialog-note">予約先URLは未確定のため、このワイヤーでは遷移内容までを確認できます。</p>
+      </div>
+    </dialog>
   </body>
 </html>

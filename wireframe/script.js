@@ -1,133 +1,44 @@
 document.documentElement.classList.add("js");
 
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const annotationToggle = document.querySelector("[data-annotation-toggle]");
 
-document.querySelectorAll("[data-carousel]").forEach((carousel) => {
-  const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
-  const previousButton = carousel.querySelector("[data-carousel-prev]");
-  const nextButton = carousel.querySelector("[data-carousel-next]");
-  const toggleButton = carousel.querySelector("[data-carousel-toggle]");
-  const captions = carousel.querySelectorAll("[data-carousel-caption]");
-  const indexes = carousel.querySelectorAll("[data-carousel-index]");
-  const autoplay = carousel.dataset.autoplay === "true";
+if (annotationToggle) {
+  const shortLabel = window.matchMedia("(max-width: 600px)");
 
-  if (slides.length < 2) return;
-
-  let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
-  let timer = null;
-  let userPaused = false;
-  let pointerInside = false;
-  let focusInside = false;
-
-  const render = (nextIndex) => {
-    activeIndex = (nextIndex + slides.length) % slides.length;
-    slides.forEach((slide, index) => {
-      const isActive = index === activeIndex;
-      slide.classList.toggle("is-active", isActive);
-      slide.setAttribute("aria-hidden", String(!isActive));
-    });
-
-    const caption = slides[activeIndex].dataset.caption || "";
-    captions.forEach((output) => {
-      output.textContent = caption;
-    });
-    indexes.forEach((output) => {
-      output.textContent = String(activeIndex + 1).padStart(2, "0");
-    });
+  const updateAnnotationLabel = () => {
+    const isHidden = document.body.classList.contains("annotations-hidden");
+    annotationToggle.setAttribute("aria-pressed", String(!isHidden));
+    annotationToggle.textContent = shortLabel.matches
+      ? isHidden
+        ? "注釈ON"
+        : "注釈OFF"
+      : isHidden
+        ? "設計ラベルを表示"
+        : "設計ラベルを隠す";
   };
 
-  const stop = () => {
-    if (timer !== null) {
-      window.clearTimeout(timer);
-      timer = null;
-    }
-  };
-
-  const canAutoplay = () =>
-    autoplay && !reducedMotion.matches && !userPaused && !pointerInside && !focusInside && !document.hidden;
-
-  const schedule = () => {
-    stop();
-    if (!canAutoplay()) return;
-    timer = window.setTimeout(() => {
-      render(activeIndex + 1);
-      schedule();
-    }, 6500);
-  };
-
-  const syncToggle = () => {
-    if (!toggleButton) return;
-    if (reducedMotion.matches) {
-      toggleButton.textContent = "自動再生なし";
-      toggleButton.disabled = true;
-      toggleButton.setAttribute("aria-pressed", "true");
-      return;
-    }
-    toggleButton.disabled = false;
-    toggleButton.textContent = userPaused ? "再生" : "一時停止";
-    toggleButton.setAttribute("aria-pressed", String(userPaused));
-  };
-
-  previousButton?.addEventListener("click", () => {
-    render(activeIndex - 1);
-    schedule();
+  annotationToggle.addEventListener("click", () => {
+    document.body.classList.toggle("annotations-hidden");
+    updateAnnotationLabel();
   });
 
-  nextButton?.addEventListener("click", () => {
-    render(activeIndex + 1);
-    schedule();
-  });
-
-  toggleButton?.addEventListener("click", () => {
-    userPaused = !userPaused;
-    syncToggle();
-    schedule();
-  });
-
-  if (autoplay) {
-    carousel.addEventListener("pointerenter", () => {
-      pointerInside = true;
-      stop();
-    });
-    carousel.addEventListener("pointerleave", () => {
-      pointerInside = false;
-      schedule();
-    });
-    carousel.addEventListener("focusin", () => {
-      focusInside = true;
-      stop();
-    });
-    carousel.addEventListener("focusout", () => {
-      window.requestAnimationFrame(() => {
-        focusInside = carousel.contains(document.activeElement);
-        schedule();
-      });
-    });
-    document.addEventListener("visibilitychange", schedule);
-    reducedMotion.addEventListener("change", () => {
-      syncToggle();
-      schedule();
-    });
-  }
-
-  render(activeIndex);
-  syncToggle();
-  schedule();
-});
+  shortLabel.addEventListener("change", updateAnnotationLabel);
+  updateAnnotationLabel();
+}
 
 const stickyCta = document.querySelector("[data-sticky-cta]");
-const stickyStart = document.querySelector("#guide");
-const stickyEnd = document.querySelector("#final");
+const stickyStart = document.querySelector("#day");
+const stickyEnd = document.querySelector("#reserve");
 
 if (stickyCta && stickyStart && stickyEnd) {
   let queued = false;
 
   const updateStickyCta = () => {
-    const startBox = stickyStart.getBoundingClientRect();
-    const endBox = stickyEnd.getBoundingClientRect();
-    const hasPassedStart = startBox.top < window.innerHeight * 0.45;
-    const hasReachedEnd = endBox.top < window.innerHeight * 0.8;
-    stickyCta.classList.toggle("is-visible", hasPassedStart && !hasReachedEnd);
+    const hasPassedStart = stickyStart.getBoundingClientRect().top < window.innerHeight * 0.5;
+    const hasReachedEnd = stickyEnd.getBoundingClientRect().top < window.innerHeight * 0.85;
+    const isVisible = hasPassedStart && !hasReachedEnd;
+    stickyCta.classList.toggle("is-visible", isVisible);
+    stickyCta.setAttribute("aria-hidden", String(!isVisible));
     queued = false;
   };
 
@@ -140,4 +51,54 @@ if (stickyCta && stickyStart && stickyEnd) {
   window.addEventListener("scroll", queueUpdate, { passive: true });
   window.addEventListener("resize", queueUpdate);
   updateStickyCta();
+}
+
+const reservationDialog = document.querySelector("[data-reservation-dialog]");
+const openReservationButtons = document.querySelectorAll("[data-open-reservation]");
+const closeReservationButton = document.querySelector("[data-close-reservation]");
+
+if (reservationDialog instanceof HTMLDialogElement) {
+  openReservationButtons.forEach((button) => {
+    button.addEventListener("click", () => reservationDialog.showModal());
+  });
+
+  closeReservationButton?.addEventListener("click", () => reservationDialog.close());
+
+  reservationDialog.addEventListener("click", (event) => {
+    if (event.target === reservationDialog) reservationDialog.close();
+  });
+}
+
+const shareButton = document.querySelector("[data-share]");
+
+if (shareButton) {
+  const defaultLabel = shareButton.textContent;
+
+  const setTemporaryLabel = (label) => {
+    shareButton.textContent = label;
+    window.setTimeout(() => {
+      shareButton.textContent = defaultLabel;
+    }, 2400);
+  };
+
+  shareButton.addEventListener("click", async () => {
+    const shareData = {
+      title: document.title,
+      text: "結婚指輪・婚約指輪と、ふたりの香りをつくる蔵前限定コース",
+      url: window.location.href,
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+        return;
+      }
+
+      await navigator.clipboard.writeText(window.location.href);
+      setTemporaryLabel("ページURLをコピーしました");
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") return;
+      setTemporaryLabel("URLをコピーできませんでした");
+    }
+  });
 }
