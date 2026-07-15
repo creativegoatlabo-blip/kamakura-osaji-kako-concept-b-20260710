@@ -27,8 +27,8 @@ if (annotationToggle) {
 }
 
 const stickyCta = document.querySelector("[data-sticky-cta]");
-const stickyStart = document.querySelector("#day");
-const stickyEnd = document.querySelector("#reserve");
+const stickyStart = document.querySelector("#offer");
+const stickyEnd = document.querySelector("#faq");
 
 if (stickyCta && stickyStart && stickyEnd) {
   let queued = false;
@@ -39,6 +39,8 @@ if (stickyCta && stickyStart && stickyEnd) {
     const isVisible = hasPassedStart && !hasReachedEnd;
     stickyCta.classList.toggle("is-visible", isVisible);
     stickyCta.setAttribute("aria-hidden", String(!isVisible));
+    stickyCta.toggleAttribute("inert", !isVisible);
+    document.body.classList.toggle("sticky-cta-visible", isVisible);
     queued = false;
   };
 
@@ -70,14 +72,17 @@ if (reservationDialog instanceof HTMLDialogElement) {
 }
 
 const shareButton = document.querySelector("[data-share]");
+const shareStatus = document.querySelector("[data-share-status]");
 
 if (shareButton) {
   const defaultLabel = shareButton.textContent;
 
   const setTemporaryLabel = (label) => {
     shareButton.textContent = label;
+    if (shareStatus) shareStatus.textContent = label;
     window.setTimeout(() => {
       shareButton.textContent = defaultLabel;
+      if (shareStatus) shareStatus.textContent = "";
     }, 2400);
   };
 

@@ -28,7 +28,7 @@
   --text-lede: clamp(1rem, 1.15vw, 1.125rem);
   --text-h3: clamp(1.15rem, 1.8vw, 1.5rem);
   --text-h2: clamp(1.75rem, 3.1vw, 2.75rem);
-  --text-h1: clamp(2rem, 3.65vw, 3.25rem);
+  --text-h1: clamp(2rem, 3.1vw, 2.75rem);
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -52,6 +52,12 @@
   --z-header: 30;
   --z-sticky: 40;
   --z-dialog: 80;
-  --duration: 160ms;
-  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration: var(--dur-micro);
+  --ease: var(--ease-out);
 }
