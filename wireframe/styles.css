@@ -1,4 +1,4 @@
-/* Hallmark · genre: modern-minimal · macrostructure: Conversational FAQ · hero: H2 Split Diptych, ratio=5/7, mobile=copy-image-action · theme: Design-neutral conversion wireframe · anchor hue: neutral · enrichment: E8 single spacious photography placeholder · image knobs: hero=PC 3:2/SP 16:10, support=separate scroll-peek bridge, day=compact horizontal track · CTA: repeated conversion · nav: N9 Edge-aligned minimal · footer: Ft2 Inline rule · audience: three bridal-ring personas · use: identify the collaboration, then check availability · tone: quiet · contrast: pass (46–50) · slop: pass (51–55) · honest: pass (56) · chrome: pass (57) · tokens: pass (58) · responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69) */
+/* Hallmark · genre: modern-minimal · macrostructure: Conversational FAQ · hero: H2 Split Diptych, ratio=5/7, mobile=copy-image-action · theme: Design-neutral conversion wireframe · anchor hue: neutral · enrichment: E8 single spacious photography placeholder · image knobs: hero=PC 3:2/SP 16:10, support=separate scroll-peek bridge, day=compact horizontal track · CTA: repeated conversion · nav: N9 Edge-aligned minimal, deferred until after hero · footer: Ft2 Inline rule · audience: three bridal-ring personas · use: identify the collaboration, then check availability · tone: quiet · contrast: pass (46–50) · slop: pass (51–55) · honest: pass (56) · chrome: pass (57) · tokens: pass (58) · responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69) */
 /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
 @import url("./tokens.css?v=20260715-wire-9");
 
@@ -147,8 +147,8 @@ ul {
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  inset: 0 0 auto;
   z-index: var(--z-header);
   display: flex;
   min-height: var(--header);
@@ -158,6 +158,22 @@ ul {
   padding: calc(var(--space-3) + env(safe-area-inset-top)) var(--gutter) var(--space-3);
   background: var(--paper-translucent);
   border-bottom: var(--line) solid var(--rule);
+  opacity: 0;
+  transform: translateY(calc(-100% - var(--line)));
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    transform var(--dur-short) var(--ease-out),
+    opacity var(--dur-micro) var(--ease-out),
+    visibility 0s linear var(--dur-short);
+}
+
+.site-header.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
 }
 
 .brand-lockup,
@@ -1492,5 +1508,9 @@ ul {
   *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .site-header {
+    transform: none;
   }
 }

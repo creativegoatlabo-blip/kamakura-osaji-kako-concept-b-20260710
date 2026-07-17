@@ -1,5 +1,23 @@
 document.documentElement.classList.add("js");
 
+const siteHeader = document.querySelector("[data-site-header]");
+const heroSection = document.querySelector(".hero");
+
+if (siteHeader && heroSection) {
+  const setSiteHeaderVisibility = (isVisible) => {
+    siteHeader.classList.toggle("is-visible", isVisible);
+    siteHeader.setAttribute("aria-hidden", String(!isVisible));
+    siteHeader.toggleAttribute("inert", !isVisible);
+  };
+
+  const heroObserver = new IntersectionObserver(([entry]) => {
+    const hasPassedHero = !entry.isIntersecting && entry.boundingClientRect.bottom <= 0;
+    setSiteHeaderVisibility(hasPassedHero);
+  });
+
+  heroObserver.observe(heroSection);
+}
+
 const annotationToggle = document.querySelector("[data-annotation-toggle]");
 
 if (annotationToggle) {
