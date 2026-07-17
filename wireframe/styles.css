@@ -1,4 +1,4 @@
-/* Hallmark · genre: modern-minimal · macrostructure: Conversational FAQ · theme: Design-neutral conversion wireframe · anchor hue: neutral · enrichment: E8 photography placeholders · image knobs: crop=16:10 mobile, support=scroll-peek, whitespace=expanded · CTA: repeated conversion · nav: N9 Edge-aligned minimal · footer: Ft2 Inline rule · audience: three bridal-ring personas · use: move from eligibility to booking confidence · tone: quiet · contrast: pass (46–50) · slop: pass (51–55) · honest: pass (56) · chrome: pass (57) · tokens: pass (58) · responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69) */
+/* Hallmark · genre: modern-minimal · macrostructure: Conversational FAQ · theme: Design-neutral conversion wireframe · anchor hue: neutral · enrichment: E8 photography placeholders · image knobs: crop=16:10 mobile, support=scroll-peek, day=compact horizontal track, whitespace=expanded · CTA: repeated conversion · nav: N9 Edge-aligned minimal · footer: Ft2 Inline rule · audience: three bridal-ring personas · use: move from eligibility to booking confidence · tone: quiet · contrast: pass (46–50) · slop: pass (51–55) · honest: pass (56) · chrome: pass (57) · tokens: pass (58) · responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69) */
 /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V4 */
 @import url("./tokens.css?v=20260715-wire-9");
 
@@ -53,6 +53,7 @@ button:focus-visible,
 a:focus-visible,
 summary:focus-visible,
 .plan-grid:focus-visible,
+.day-track:focus-visible,
 .offer-compact-track:focus-visible {
   outline: var(--line-strong) solid var(--focus);
   outline-offset: var(--space-1);
@@ -1035,12 +1036,19 @@ ul {
   }
 
   .day-track {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-6) var(--space-4);
+    display: flex;
+    width: calc(100% + var(--gutter));
+    padding-block-end: var(--space-2);
+    padding-inline-end: var(--gutter);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: thin;
   }
 
   .day-card {
-    min-width: 0;
+    flex: 0 0 min(80vw, 24rem);
+    scroll-snap-align: start;
   }
 
   .offer-feature--wide {
@@ -1319,35 +1327,6 @@ ul {
 
   .brand-gallery > .media-placeholder:not(.brand-gallery__main) figcaption span {
     display: none;
-  }
-
-  .day-track {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-5);
-  }
-
-  .day-card {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto auto auto;
-    align-items: start;
-    gap: var(--space-3);
-    padding-block-start: var(--space-3);
-    padding-block-end: var(--space-3);
-  }
-
-  .day-card__time {
-    grid-column: 1 / -1;
-  }
-
-  .day-card .media-placeholder {
-    grid-column: 1;
-    grid-row: 2;
-    aspect-ratio: 16 / 10;
-  }
-
-  .day-card > div {
-    grid-column: 1;
-    grid-row: 3;
   }
 
   .plan-grid {
