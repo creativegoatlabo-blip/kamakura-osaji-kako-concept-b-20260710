@@ -8,7 +8,7 @@
       name="description"
       content="鎌倉彫金工房とOSAJI kakoの蔵前限定タイアップLPについて、写真・情報・CTAの順序を確認するためのグレースケールワイヤーフレーム。"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260715-wire-10" />
+    <link rel="stylesheet" href="./styles.css?v=20260717-wire-11" />
     <script src="./script.js?v=20260715-wire-9" defer></script>
   </head>
   <body>
@@ -31,16 +31,6 @@
 
     <main id="main">
       <section id="top" class="hero" aria-labelledby="hero-title">
-        <div class="hero__media">
-          <figure class="media-placeholder media-placeholder--hero">
-            <figcaption>
-              <strong>手元・リング・香りのボトルを<br />中央に詰めず、周囲に余白を残した<br />横位置写真を想定</strong>
-              <span>主画像 / 16:9 / 引きの画角 / 最重要</span>
-            </figcaption>
-          </figure>
-          <span class="annotation annotation--media">役割：1秒で企画を理解｜重要度：最重要</span>
-        </div>
-
         <div class="hero__copy">
           <p class="hero__brand"><span translate="no">OSAJI kako</span> × 鎌倉彫金工房｜東京・蔵前限定</p>
           <h1 id="hero-title">
@@ -48,32 +38,58 @@
             <span class="hero-title__line">ふたりの香りを</span>
             <span class="hero-title__line">つくる一日。</span>
           </h1>
+          <span class="annotation">役割：ブランド名＋H1｜1秒で企画対象を理解｜重要度：最重要</span>
+        </div>
+
+        <div class="hero__media">
+          <figure class="media-placeholder media-placeholder--hero">
+            <figcaption>
+              <strong>ふたり・リング・香りのボトルを<br />同じ空間に収め、被写体の周囲に<br />余白を残した横位置写真を想定</strong>
+              <span>主画像 / PC 3:2・SP 16:10 / 引きの画角 / 最重要</span>
+            </figcaption>
+          </figure>
+          <span class="annotation annotation--media">役割：企画の体験価値を一枚で伝える｜重要度：最重要</span>
+        </div>
+
+        <div class="hero__action">
           <p class="hero__lede">ホームフレグランスと、ふたりが選ぶブライダルリングを同じ日に手づくりします。</p>
           <button class="button button--section" type="button" data-open-reservation>蔵前限定コースの空き日程を見る</button>
-          <span class="annotation">役割：H1＋導入＋予約CTA｜企画理解後すぐ空き枠を確認</span>
+          <span class="annotation">役割：一文の説明＋予約CTA｜企画理解後すぐ空き枠を確認</span>
         </div>
+      </section>
 
-        <div class="hero__support" aria-label="ファーストビュー補助写真">
-          <figure class="media-placeholder">
-            <figcaption>
-              <strong>ふたりと制作台の空気感まで入る<br />引きの写真を想定</strong>
-              <span>補助画像 / 16:10 / 横スライド</span>
-            </figcaption>
-          </figure>
-          <figure class="media-placeholder">
-            <figcaption>
-              <strong>香りと指輪制作の距離が分かる<br />引きの写真を想定</strong>
-              <span>補助画像 / 16:10 / 横スライド</span>
-            </figcaption>
-          </figure>
+      <section class="hero-bridge" aria-labelledby="hero-bridge-title">
+        <div class="section-shell">
+          <header class="hero-bridge__heading">
+            <h2 id="hero-bridge-title">香りをつくり、<br />指輪をつくる一日</h2>
+            <div class="hero-bridge__intro">
+              <p>午前はふたりの香りを。午後は、その香りに包まれて指輪を。</p>
+              <span class="annotation">役割：FVの余韻を保ったまま体験順序へつなぐ</span>
+            </div>
+          </header>
+
+          <div class="hero-bridge__media" role="group" aria-label="一日の空気感を伝える補助写真。スマートフォンでは横にスワイプできます" tabindex="0">
+            <figure class="media-placeholder">
+              <figcaption>
+                <strong>ふたりと制作台の空気感まで入る<br />引きの写真を想定</strong>
+                <span>補助画像 / 16:10 / 余白あり</span>
+              </figcaption>
+            </figure>
+            <figure class="media-placeholder">
+              <figcaption>
+                <strong>香りと指輪制作の距離が分かる<br />引きの写真を想定</strong>
+                <span>補助画像 / 16:10 / 余白あり</span>
+              </figcaption>
+            </figure>
+          </div>
+
+          <dl class="hero-bridge__facts" aria-label="開催概要">
+            <div><dt>場所</dt><dd>東京・蔵前</dd></div>
+            <div><dt>開催</dt><dd>10〜11月・水／日</dd></div>
+            <div><dt>モデル</dt><dd>kako 11:00／指輪 15:00</dd></div>
+            <div><dt>予約</dt><dd>2店舗を一括受付</dd></div>
+          </dl>
         </div>
-
-        <dl class="hero-facts" aria-label="開催概要">
-          <div><dt>場所</dt><dd>東京・蔵前</dd></div>
-          <div><dt>開催</dt><dd>10〜11月・水／日</dd></div>
-          <div><dt>モデル</dt><dd>kako 11:00／指輪 15:00</dd></div>
-          <div><dt>予約</dt><dd>2店舗を一括受付</dd></div>
-        </dl>
       </section>
 
       <section id="plans" class="section section--compact plans" aria-labelledby="plans-title">
