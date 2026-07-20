@@ -1,4 +1,4 @@
-/* Hallmark · genre: modern-minimal · macrostructure: Conversational FAQ · hero: H2 Split Diptych, ratio=5/7, mobile=copy-image-action · theme: Design-neutral conversion wireframe · anchor hue: neutral · enrichment: E8 single spacious photography placeholder · image knobs: hero=PC 3:2/SP 16:10, support=separate scroll-peek bridge, day=compact horizontal track, price=asymmetric 2/1/1 ledger · CTA: repeated conversion · nav: N9 Edge-aligned minimal, deferred until after hero · footer: Ft2 Inline rule · audience: three bridal-ring personas · use: identify the collaboration, understand a ring-price range, then check availability · tone: quiet · contrast: pass (46–50) · slop: pass (51–55) · honest: pass (56) · chrome: pass (57) · tokens: pass (58) · responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69) */
+/* Hallmark · genre: modern-minimal · macrostructure: Conversational FAQ · hero: H2 Split Diptych, ratio=5/7, mobile=copy-image-action · theme: Design-neutral conversion wireframe · anchor hue: neutral · enrichment: E8 single spacious photography placeholder · image knobs: hero=PC 3:2/SP 16:10, support=separate scroll-peek bridge, day=compact horizontal track, price=three-plan range ledger with mobile jump index · CTA: repeated conversion · nav: N9 Edge-aligned minimal, deferred until after hero · footer: Ft2 Inline rule · audience: three bridal-ring personas · use: compare pair-total ranges, then check availability · tone: quiet · contrast: pass (46–50) · slop: pass (51–55) · honest: pass (56) · chrome: pass (57) · tokens: pass (58) · responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69) */
 /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
 @import url("./tokens.css?v=20260715-wire-9");
 
@@ -67,6 +67,10 @@ summary:focus-visible,
     background: var(--surface-strong);
     color: var(--ink);
     border-color: var(--ink);
+  }
+
+  .price-index a:hover {
+    background: var(--surface-strong);
   }
 }
 
@@ -768,8 +772,12 @@ ul {
 
 .price-example-grid {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-4);
+}
+
+.price-index {
+  display: none;
 }
 
 .price-example {
@@ -782,7 +790,7 @@ ul {
 }
 
 .price-example .media-placeholder {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
 }
 
 .price-example__copy {
@@ -794,22 +802,97 @@ ul {
   font-size: var(--text-body);
 }
 
-.price-example__price {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--space-3);
+.price-example__scope {
+  color: var(--muted);
+  font-family: var(--font-label);
+  font-size: var(--text-label);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.price-example__breakdown {
+  display: grid;
   font-variant-numeric: tabular-nums;
 }
 
-.price-example__price span,
+.price-example__breakdown > div {
+  display: grid;
+  gap: var(--space-2);
+  padding-block: var(--space-3);
+  border-block-start: var(--line) solid var(--rule);
+}
+
+.price-example__breakdown dt {
+  color: var(--muted);
+  font-family: var(--font-label);
+  font-size: var(--text-label);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.price-example__breakdown dd {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.price-example__breakdown dd > span:first-child {
+  color: var(--ink-soft);
+  font-size: var(--text-small);
+  line-height: 1.65;
+}
+
+.price-example__breakdown dd > strong {
+  justify-self: end;
+  font-size: var(--text-body);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.price-example__offer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.price-example__offer del {
+  color: var(--muted);
+  font-size: var(--text-label);
+}
+
+.price-example__offer b {
+  padding: var(--space-1) var(--space-2);
+  border: var(--line) solid var(--ink);
+  font-size: var(--text-label);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.price-example__offer strong {
+  font-size: var(--text-body);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.price-example__total {
+  display: grid;
+  gap: var(--space-2);
+  padding-block-start: var(--space-3);
+  border-block-start: var(--line-strong) solid var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.price-example__total span,
 .price-example-note {
   color: var(--muted);
   font-size: var(--text-small);
 }
 
-.price-example__price strong {
-  font-size: var(--text-h3);
+.price-example__total strong {
+  font-size: clamp(1.125rem, 1.8vw, 1.5rem);
   line-height: 1.2;
   white-space: nowrap;
 }
@@ -1436,12 +1519,48 @@ ul {
     scrollbar-width: none;
   }
 
+  .price-index {
+    display: grid;
+    gap: 0;
+    margin-block-end: var(--space-5);
+    border-block: var(--line) solid var(--rule-strong);
+  }
+
+  .price-index a {
+    display: flex;
+    min-height: var(--tap);
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding-inline: var(--space-3);
+    border-block-start: var(--line) solid var(--rule);
+    font-size: var(--text-small);
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .price-index a:first-child {
+    border-block-start: 0;
+  }
+
+  .price-index strong {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .price-index a:active {
+    transform: translateY(1px);
+  }
+
   .price-example,
   .price-example:first-child {
     grid-column: auto;
     grid-template-columns: minmax(0, 1fr);
     align-items: start;
     scroll-snap-align: start;
+  }
+
+  .price-example__total strong {
+    font-size: 1.125rem;
   }
 
   .price-example .media-placeholder {

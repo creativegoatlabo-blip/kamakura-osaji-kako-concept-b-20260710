@@ -89,6 +89,23 @@ if (reservationDialog instanceof HTMLDialogElement) {
   });
 }
 
+const priceJumpLinks = document.querySelectorAll("[data-price-jump]");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+priceJumpLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href");
+    const target = targetId ? document.querySelector(targetId) : null;
+    const priceGrid = target?.closest(".price-example-grid");
+
+    if (!(target instanceof HTMLElement) || !(priceGrid instanceof HTMLElement)) return;
+
+    event.preventDefault();
+    const targetLeft = target.getBoundingClientRect().left - priceGrid.getBoundingClientRect().left + priceGrid.scrollLeft;
+    priceGrid.scrollTo({ left: targetLeft, behavior: reduceMotion.matches ? "auto" : "smooth" });
+  });
+});
+
 const shareButton = document.querySelector("[data-share]");
 const shareStatus = document.querySelector("[data-share-status]");
 
