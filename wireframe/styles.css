@@ -1,4 +1,4 @@
-/* Hallmark · genre: modern-minimal · macrostructure: Conversational FAQ · hero: H2 Split Diptych, ratio=5/7, mobile=copy-image-action · theme: Design-neutral conversion wireframe · anchor hue: neutral · enrichment: E8 single spacious photography placeholder · image knobs: hero=PC 3:2/SP 16:10, support=separate scroll-peek bridge, day=compact horizontal track, price=three-plan range ledger with mobile jump index · CTA: repeated conversion · nav: N9 Edge-aligned minimal, deferred until after hero · footer: Ft2 Inline rule · audience: asymmetric brand awareness across three bridal-ring personas · use: understand both brands and the collaboration value, then compare pair-total ranges and check availability · tone: quiet · contrast: pass (46–50) · slop: pass (51–55) · honest: pass (56) · chrome: pass (57) · tokens: pass (58) · responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69) */
+/* Hallmark · genre: modern-minimal · macrostructure: Conversational FAQ · hero: H2 Split Diptych, ratio=5/7, mobile=copy-image-action · theme: Design-neutral conversion wireframe · anchor hue: neutral · enrichment: E8 single spacious photography placeholder · image knobs: hero=PC 3:2/SP 16:10, support=separate scroll-peek bridge, offer=three equal primary cards without horizontal scroll plus two quiet text benefits, day=compact horizontal track, price=three-plan range ledger with mobile jump index · CTA: repeated conversion · nav: N9 Edge-aligned minimal, deferred until after hero · footer: Ft2 Inline rule · audience: asymmetric brand awareness across three bridal-ring personas · use: understand both brands and the collaboration value, then compare pair-total ranges and check availability · tone: quiet · contrast: pass (46–50) · slop: pass (51–55) · honest: pass (56) · chrome: pass (57) · tokens: pass (58) · responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69) */
 /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
 @import url("./tokens.css?v=20260715-wire-9");
 
@@ -55,8 +55,7 @@ summary:focus-visible,
 .plan-grid:focus-visible,
 .price-example-grid:focus-visible,
 .day-track:focus-visible,
-.hero-bridge__media:focus-visible,
-.offer-compact-track:focus-visible {
+.hero-bridge__media:focus-visible {
   outline: var(--line-strong) solid var(--focus);
   outline-offset: var(--space-1);
 }
@@ -676,48 +675,42 @@ ul {
   background: var(--surface);
 }
 
-.offer-leads {
+.offer-primary-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-5);
-}
-
-.offer-compact-track {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  min-width: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-5);
 }
 
 .offer-feature {
   display: grid;
   align-content: start;
-  gap: var(--space-4);
+  min-width: 0;
+  gap: var(--space-3);
 }
 
-.offer-feature--compact {
-  grid-template-columns: minmax(8rem, 1fr) minmax(0, 1.35fr);
-  align-items: center;
+.offer-feature--primary {
+  display: grid;
+  align-content: start;
+  grid-template-rows: auto minmax(0, 1fr);
+  padding-block-end: var(--space-4);
+  border-bottom: var(--line-strong) solid var(--ink);
 }
 
-.offer-feature--wide {
-  grid-template-columns: minmax(0, 7fr) minmax(16rem, 4fr);
-  align-items: center;
-  gap: var(--space-6);
-}
-
-.offer-feature--wide .media-placeholder {
+.offer-feature--primary .media-placeholder {
   aspect-ratio: 16 / 10;
 }
 
-.offer-feature h3,
-.offer-support h3 {
-  margin-block: var(--space-2);
+.offer-feature__copy {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+}
+
+.offer-feature h3 {
   font-size: var(--text-h3);
 }
 
-.offer-feature p:last-child,
-.offer-support p:last-child {
+.offer-feature p:last-child {
   color: var(--ink-soft);
 }
 
@@ -730,12 +723,30 @@ ul {
 }
 
 .offer-support article {
-  padding: var(--space-4) var(--space-5);
+  display: grid;
+  align-content: start;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
   border-inline-start: var(--line) solid var(--rule);
 }
 
 .offer-support article:first-child {
   border-inline-start: 0;
+}
+
+.offer-support .offer-number {
+  font-size: var(--text-label);
+  font-weight: 400;
+}
+
+.offer-support h3 {
+  color: var(--ink-soft);
+  font-size: var(--text-body);
+}
+
+.offer-support p:last-child {
+  color: var(--muted);
+  font-size: var(--text-small);
 }
 
 .plan-grid {
@@ -1262,19 +1273,6 @@ ul {
     scroll-snap-align: start;
   }
 
-  .offer-feature--wide {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .offer-feature--compact {
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-  }
-
-  .offer-feature--compact .media-placeholder {
-    aspect-ratio: 16 / 10;
-  }
-
   .plan-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-5);
@@ -1390,8 +1388,7 @@ ul {
 
   .hero-bridge__media::-webkit-scrollbar,
   .plan-grid::-webkit-scrollbar,
-  .price-example-grid::-webkit-scrollbar,
-  .offer-compact-track::-webkit-scrollbar {
+  .price-example-grid::-webkit-scrollbar {
     display: none;
   }
 
@@ -1586,60 +1583,29 @@ ul {
     line-height: 1.5;
   }
 
-  .offer-leads,
-  .offer-feature--wide {
+  .offer-primary-grid {
     grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
   }
 
-  .offer-compact-track {
-    width: calc(100% + var(--gutter));
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    grid-auto-columns: min(84%, 20rem);
-    padding-block-end: var(--space-2);
-    padding-inline-end: var(--gutter);
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: inline mandatory;
-    scrollbar-width: none;
-  }
-
-  .offer-feature--compact {
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-    gap: var(--space-4);
-    scroll-snap-align: start;
-  }
-
-  .offer-feature--compact .media-placeholder {
-    aspect-ratio: 16 / 10;
-  }
-
-  .offer-feature--compact .media-placeholder figcaption {
+  .offer-feature--primary .media-placeholder figcaption {
     padding: var(--space-3);
     font-size: var(--text-small);
     line-height: 1.5;
   }
 
   .offer-support {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .offer-support article {
     padding: var(--space-3);
-    border-top: 0;
+    border-inline-start: 0;
+    border-top: var(--line) solid var(--rule);
   }
 
   .offer-support article:first-child {
-    border-inline-start: 0;
-  }
-
-  .offer-support h3 {
-    font-size: 1rem;
-  }
-
-  .offer-support p:last-child {
-    font-size: var(--text-small);
+    border-top: 0;
   }
 
   .quality-grid {
