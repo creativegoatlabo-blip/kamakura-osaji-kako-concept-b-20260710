@@ -1,4 +1,4 @@
-/* Hallmark · genre: modern-minimal · macrostructure: Conversational FAQ · hero: H2 Split Diptych, ratio=5/7, mobile=copy-image-action · theme: Design-neutral conversion wireframe · anchor hue: neutral · enrichment: E8 single spacious photography placeholder · image knobs: hero=PC 3:2/SP 16:10, support=separate scroll-peek bridge, offer=three equal primary cards without horizontal scroll plus two quiet text benefits, day=compact horizontal track, price=three-plan range ledger with mobile jump index · CTA: repeated conversion · nav: N9 Edge-aligned minimal, deferred until after hero · footer: Ft2 Inline rule · audience: asymmetric brand awareness across three bridal-ring personas · use: understand both brands and the collaboration value, then compare pair-total ranges and check availability · tone: quiet · contrast: pass (46–50) · slop: pass (51–55) · honest: pass (56) · chrome: pass (57) · tokens: pass (58) · responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69) */
+/* Hallmark · genre: modern-minimal · macrostructure: Conversational FAQ · hero: H2 Split Diptych, ratio=5/7, mobile=copy-image-action · theme: Design-neutral conversion wireframe · anchor hue: neutral · enrichment: E8 single spacious photography placeholder · image knobs: hero=PC 3:2/SP 16:10, support=separate scroll-peek bridge, offer=three equal primary cards without horizontal scroll plus two quiet text benefits, day=compact horizontal track, price=three-plan range ledger with mobile jump index, guide=compact specification sheet plus two-stop walking route · CTA: repeated conversion · nav: N9 Edge-aligned minimal, deferred until after hero · footer: Ft2 Inline rule · audience: asymmetric brand awareness across three bridal-ring personas · use: understand both brands and the collaboration value, then compare pair-total ranges and check availability · tone: quiet · contrast: pass (46–50) · slop: pass (51–55) · honest: pass (56) · chrome: pass (57) · tokens: pass (58) · responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69) */
 /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
 @import url("./tokens.css?v=20260715-wire-9");
 
@@ -52,7 +52,6 @@ summary {
 button:focus-visible,
 a:focus-visible,
 summary:focus-visible,
-.plan-grid:focus-visible,
 .price-example-grid:focus-visible,
 .day-track:focus-visible,
 .hero-bridge__media:focus-visible {
@@ -313,8 +312,7 @@ ul {
 .hero__brand,
 .section-kicker,
 .brand-logo,
-.offer-number,
-.plan-card__index {
+.offer-number {
   color: var(--muted);
   font-size: var(--text-small);
   font-weight: 700;
@@ -749,34 +747,6 @@ ul {
   font-size: var(--text-small);
 }
 
-.plan-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-4);
-}
-
-.plan-card {
-  display: grid;
-  align-content: start;
-  gap: var(--space-3);
-  padding-block-end: var(--space-4);
-  border-bottom: var(--line-strong) solid var(--ink);
-}
-
-.plan-card .media-placeholder {
-  aspect-ratio: 4 / 3;
-}
-
-.plan-card__copy {
-  display: grid;
-  align-content: center;
-  gap: var(--space-2);
-}
-
-.plan-card h3 {
-  font-size: var(--text-h3);
-}
-
 .price-examples {
   background: var(--surface);
 }
@@ -914,56 +884,138 @@ ul {
   line-height: 1.75;
 }
 
-.quality-grid {
+.course-facts {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-block-end: var(--space-6);
   border: var(--line) solid var(--rule-strong);
 }
 
-.quality-grid article {
-  padding: var(--space-5);
+.course-facts article {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-4);
   border-inline-start: var(--line) solid var(--rule);
 }
 
-.quality-grid article:first-child {
+.course-facts article:first-child {
   border-inline-start: 0;
 }
 
-.quality-grid h3 {
-  margin-block-end: var(--space-3);
-  font-size: 1rem;
+.course-facts p {
+  color: var(--muted);
+  font-family: var(--font-label);
+  font-size: var(--text-label);
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
-.quality-grid p {
-  color: var(--ink-soft);
-  font-size: var(--text-small);
+.course-facts strong {
+  font-size: var(--text-body);
+  line-height: 1.45;
 }
 
 .guide {
   background: var(--surface);
 }
 
-.guide-list {
+.course-overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  align-items: start;
+  gap: var(--space-7);
+}
+
+.course-spec-list {
   border-top: var(--line-strong) solid var(--ink);
 }
 
-.guide-list div {
+.course-spec-list div {
   display: grid;
-  grid-template-columns: minmax(8rem, 1fr) minmax(0, 2.2fr);
+  grid-template-columns: minmax(7rem, 0.8fr) minmax(0, 2.2fr);
   gap: var(--space-5);
   padding-block: var(--space-4);
   border-bottom: var(--line) solid var(--rule);
 }
 
-.guide-list dt {
+.course-spec-list dt {
   color: var(--muted);
   font-size: var(--text-small);
   font-weight: 700;
 }
 
-.guide-list dd {
+.course-spec-list dd {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--text-small);
+  font-weight: 600;
+  line-height: 1.75;
+}
+
+.course-route {
+  border-top: var(--line-strong) solid var(--ink);
+  border-bottom: var(--line-strong) solid var(--ink);
+}
+
+.course-route__stop {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: var(--space-3);
+  padding-block: var(--space-4);
+}
+
+.course-route__label {
+  color: var(--muted);
+  font-family: var(--font-label);
+  font-size: var(--text-small);
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.course-route__stop h3 {
+  margin-block-end: var(--space-2);
+  font-size: var(--text-body);
+}
+
+.course-route__stop address {
+  color: var(--ink-soft);
+  font-size: var(--text-small);
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.course-route a {
+  display: inline-flex;
+  width: max-content;
+  min-height: var(--tap);
+  align-items: center;
+  margin-block-start: var(--space-3);
+  border-bottom: var(--line) solid currentColor;
+  color: var(--ink);
+  font-size: var(--text-small);
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.course-route__walk {
+  display: grid;
+  gap: var(--space-1);
+  margin-inline-start: calc(4rem + var(--space-3));
+  padding-block: var(--space-3);
+  border-block: var(--line) solid var(--rule);
+}
+
+.course-route__walk strong {
+  font-size: var(--text-body);
+}
+
+.course-route__walk span {
+  color: var(--muted);
+  font-size: var(--text-label);
 }
 
 .decision-note {
@@ -1273,11 +1325,6 @@ ul {
     scroll-snap-align: start;
   }
 
-  .plan-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-5);
-  }
-
   .price-example-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-5);
@@ -1289,10 +1336,21 @@ ul {
     align-items: center;
   }
 
-  .plan-card:last-child {
-    grid-column: 1 / -1;
-    grid-template-columns: minmax(12rem, 1fr) minmax(0, 1.6fr);
-    align-items: center;
+  .course-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .course-facts article:nth-child(3) {
+    border-inline-start: 0;
+  }
+
+  .course-facts article:nth-child(n + 3) {
+    border-top: var(--line) solid var(--rule);
+  }
+
+  .course-overview-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
   }
 
   .final__grid {
@@ -1387,7 +1445,6 @@ ul {
   }
 
   .hero-bridge__media::-webkit-scrollbar,
-  .plan-grid::-webkit-scrollbar,
   .price-example-grid::-webkit-scrollbar {
     display: none;
   }
@@ -1488,20 +1545,6 @@ ul {
     display: none;
   }
 
-  .plan-grid {
-    width: calc(100% + var(--gutter));
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    grid-auto-columns: min(84%, 20rem);
-    gap: var(--space-4);
-    padding-block-end: var(--space-2);
-    padding-inline-end: var(--gutter);
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: inline mandatory;
-    scrollbar-width: none;
-  }
-
   .price-example-grid {
     width: calc(100% + var(--gutter));
     grid-template-columns: none;
@@ -1564,25 +1607,6 @@ ul {
     aspect-ratio: 16 / 10;
   }
 
-  .plan-card,
-  .plan-card:last-child {
-    grid-column: auto;
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-    gap: var(--space-3);
-    scroll-snap-align: start;
-  }
-
-  .plan-card .media-placeholder {
-    aspect-ratio: 16 / 10;
-  }
-
-  .plan-card .media-placeholder figcaption {
-    padding: var(--space-3);
-    font-size: var(--text-small);
-    line-height: 1.5;
-  }
-
   .offer-primary-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-6);
@@ -1608,23 +1632,17 @@ ul {
     border-top: 0;
   }
 
-  .quality-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .quality-grid article {
-    padding: var(--space-4);
-    border-inline-start: 0;
-    border-top: var(--line) solid var(--rule);
-  }
-
-  .quality-grid article:first-child {
-    border-top: 0;
-  }
-
-  .guide-list div {
+  .course-spec-list div {
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-1);
+  }
+
+  .course-route__stop {
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+  }
+
+  .course-route__walk {
+    margin-inline-start: calc(3.5rem + var(--space-3));
   }
 
   .mid-cta .button {
